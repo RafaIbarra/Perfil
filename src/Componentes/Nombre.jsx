@@ -68,7 +68,7 @@ function Nombre(){
       if (error) return <div>Error: {error.message}</div>;
     return(
         <div>
-            <p style={{fontSize:25,fontWeight:'bold'}}>Mi nombre es Rafael Ibarra, soy un desarrollador Web.</p>
+            <p style={{fontSize:25,fontWeight:'bold'}}>RAFAEL IBARRA DEV.</p>
 
             <div>
       <h2>Porcentaje de lenguajes en todos los repositorios:</h2>
