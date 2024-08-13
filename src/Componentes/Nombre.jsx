@@ -9,7 +9,7 @@ function Nombre(){
     useEffect(() => {
         const fetchRepos = async () => {
           try {
-            const reposResponse = await fetch('https://api.github.com/users/RafaIbarra/repos', {
+            const reposResponse = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}`, {
               headers: {
                 Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`
               }
