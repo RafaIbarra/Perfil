@@ -5,7 +5,7 @@ function Nombre(){
     const [languagePercentages, setLanguagePercentages] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-    // const GITHUB_TOKEN = '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'; // Reemplaza con tu token
+    
     useEffect(() => {
         const fetchRepos = async () => {
           try {
