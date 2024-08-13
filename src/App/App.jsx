@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from "react";
+import './app.css'
 function App(){
 
 
     return(
-        <div>
+        <div className="landing" >
             Hola mi nombre es Rafael
         </div>
     )

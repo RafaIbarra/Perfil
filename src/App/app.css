@@ -1,0 +1,14 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.landing {
+    background-color: aqua;
+    width: 100vw; /* Ancho de la ventana del navegador */
+    height: 100vh; /* Alto de la ventana del navegador */
+    display: flex;
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+}
