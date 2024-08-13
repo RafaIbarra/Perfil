@@ -5,10 +5,14 @@ html, body {
 }
 
 .landing {
-    background-color: aqua;
-    width: 100vw; /* Ancho de la ventana del navegador */
-    height: 100vh; /* Alto de la ventana del navegador */
+    background-image: url('/public/background-1086840.svg'); /* Ruta al archivo SVG */
+    background-size: cover; /* Asegura que la imagen cubra el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center; /* Centrar contenido horizontalmente */
-    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: center;
+    align-items: center;
+    color: white; /* Cambia el color del texto si es necesario */
 }
