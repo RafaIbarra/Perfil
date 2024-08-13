@@ -5,13 +5,13 @@ function Nombre(){
     const [languagePercentages, setLanguagePercentages] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-    const GITHUB_TOKEN = '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'; // Reemplaza con tu token
+    // const GITHUB_TOKEN = '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'; // Reemplaza con tu token
     useEffect(() => {
         const fetchRepos = async () => {
           try {
             const reposResponse = await fetch('https://api.github.com/users/RafaIbarra/repos', {
               headers: {
-                Authorization: `token ${GITHUB_TOKEN}`
+                Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`
               }
             });
             if (!reposResponse.ok) {
@@ -26,7 +26,7 @@ function Nombre(){
             const languagesPromises = repos.map(async (repo) => {
               const languagesResponse = await fetch(repo.languages_url, {
                 headers: {
-                  Authorization: `token ${GITHUB_TOKEN}`
+                    Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`
                 }
               });
               const repoLanguages = await languagesResponse.json();
@@ -59,6 +59,7 @@ function Nombre(){
           } finally {
             setLoading(false);
           }
+          
         };
     
         fetchRepos();
