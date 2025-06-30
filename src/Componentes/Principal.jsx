@@ -9,11 +9,12 @@ import {
 import './principal.css'
 import AboutSection from './AboutSection/AboutSection';
 import WorksSection from './WorksSection/WorksSection';
-import ExperienceSection from './ExperienceSection/ExperienceSection';
+import ExperienceSection from './ExperienceSection/ExperienceSectionv2';
 import Generarpeticion from '../Peticiones/apipeticiones';
 const Principal = () => {
   const [loading,setLoading]=useState(false)
   const [datacantidades,setDatacantidades]=useState([])
+  const [datalenguajes,setDatalenguajes]=useState([])
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -27,7 +28,8 @@ const Principal = () => {
       const result = await Generarpeticion(endpoint);
       
       if (result.resp===200){
-        console.log(result.data.cantidades)
+        
+        setDatalenguajes(result.data.porcentajes)
         setDatacantidades(result.data.cantidades)
       }
       setLoading(false)
@@ -85,7 +87,7 @@ const Principal = () => {
         <AboutSection datacantidades={datacantidades} />
       </section>
       <section id="experience" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-        <ExperienceSection />
+        <ExperienceSection datalenguajes={datalenguajes} />
       </section>
       <section id="works" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
         <WorksSection />

@@ -3,14 +3,14 @@ import * as echarts from 'echarts';
 const AboutSection = ({datacantidades}) => {
     const chartRef = useRef(null);
     useEffect(()=>{
-      console.log('en abu', datacantidades)
+      
        const myChart = echarts.init(chartRef.current);
 
        const formattedData = datacantidades.map(item => ({
         value: item.cantidad,
         name: item.framework
       }));
-      console.log('formattedData', formattedData)
+      
 
         const option = {
             tooltip: {

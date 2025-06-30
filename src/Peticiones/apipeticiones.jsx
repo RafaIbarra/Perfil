@@ -1,7 +1,6 @@
 import { VITE_APIBASE,VITE_API_KEY } from "../../config";
 async function Generarpeticion(endpoint){
-    console.log(VITE_APIBASE)
-    console.log(VITE_API_KEY)
+
     const requestOptions = {
             method: "GET",
             headers: {
