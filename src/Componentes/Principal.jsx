@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { Button } from 'antd';
 import {
   UserOutlined,
@@ -10,13 +10,30 @@ import './principal.css'
 import AboutSection from './AboutSection/AboutSection';
 import WorksSection from './WorksSection/WorksSection';
 import ExperienceSection from './ExperienceSection/ExperienceSection';
+import Generarpeticion from '../Peticiones/apipeticiones';
 const Principal = () => {
+  const [loading,setLoading]=useState(false)
+  const [datacantidades,setDatacantidades]=useState([])
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  useEffect(()=>{ 
+    const cargadatos= async()=>{
+      setLoading(true)
+      const endpoint='ListarFrameworks/'
+      const result = await Generarpeticion(endpoint);
+      
+      if (result.resp===200){
+        console.log(result.data.cantidades)
+        setDatacantidades(result.data.cantidades)
+      }
+      setLoading(false)
+    }
+    cargadatos()
+  }, []);
 
   return (
     <div className="portfolio-container">
@@ -60,10 +77,12 @@ const Principal = () => {
           Contacto
         </Button>
       </div>
-
-      
-      <section id="about" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-        <AboutSection />
+      {
+        loading ? (<span> cargango </span>):
+        (
+          <>
+            <section id="about" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
+        <AboutSection datacantidades={datacantidades} />
       </section>
       <section id="experience" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
         <ExperienceSection />
@@ -71,13 +90,13 @@ const Principal = () => {
       <section id="works" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
         <WorksSection />
       </section>
+          </>
+        )
+      }
+      
+      
 
-      {/* 
-      
-      
-      <section id="contact" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-        <ContactSection />
-      </section> */}
+     
 
 
     </div>
