@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { Button } from 'antd';
+import { Button,Descriptions} from 'antd';
 import {
   UserOutlined,
   
@@ -11,20 +11,23 @@ import AboutSection from './AboutSection/AboutSection';
 import WorksSection from './WorksSection/WorksSection';
 import ExperienceSection from './ExperienceSection/ExperienceSectionv2';
 import Generarpeticion from '../Peticiones/apipeticiones';
+import FrameworksGraficos from './Graficos/FrameworksGraficos';
+import LenguajesGraficos from './Graficos/LenguajesGraficos';
+import Proyecto from './Proyecto/Proyecto';
 const Principal = () => {
   const [loading,setLoading]=useState(false)
   const [datacantidades,setDatacantidades]=useState([])
   const [datalenguajes,setDatalenguajes]=useState([])
+  const [dataproyectos,setDataproyectos]=useState([])
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  useEffect(()=>{ 
-    const cargadatos= async()=>{
-      setLoading(true)
-      const endpoint='ListarFrameworks/'
+
+  const listar_datos_repositorios = async()=>{
+    const endpoint='ListarFrameworks/'
       const result = await Generarpeticion(endpoint);
       
       if (result.resp===200){
@@ -32,6 +35,22 @@ const Principal = () => {
         setDatalenguajes(result.data.porcentajes)
         setDatacantidades(result.data.cantidades)
       }
+  }
+  const listar_datos_proyectos = async()=>{
+    const endpoint='ListarProyectos/0/'
+      const result = await Generarpeticion(endpoint);
+      
+      if (result.resp===200){
+        
+        setDataproyectos(result.data)
+        
+      }
+  }
+  useEffect(()=>{ 
+    const cargadatos= async()=>{
+      setLoading(true)
+      await listar_datos_repositorios()
+      await listar_datos_proyectos()
       setLoading(false)
     }
     cargadatos()
@@ -71,6 +90,13 @@ const Principal = () => {
         >
           Trabajos
         </Button>
+          <Button 
+            type="text" 
+            icon={<CodeOutlined />} 
+            onClick={() => scrollToSection('skills')}
+          >
+            Skills
+          </Button>
         <Button 
           type="text" 
           icon={<MailOutlined />} 
@@ -84,14 +110,41 @@ const Principal = () => {
         (
           <>
             <section id="about" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-        <AboutSection datacantidades={datacantidades} />
-      </section>
-      <section id="experience" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-        <ExperienceSection datalenguajes={datalenguajes} />
-      </section>
-      <section id="works" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-        <WorksSection />
-      </section>
+                {/* <AboutSection datacantidades={datacantidades} /> */}
+            </section>
+            <section id="experience" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
+              {/* <ExperienceSection datalenguajes={datalenguajes} /> */}
+            </section>
+            <section id="skills" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
+              <Descriptions title="Datos repositorio">     
+                    <Descriptions.Item label="Perfil">
+                      <a 
+                        href="https://github.com/RafaIbarra" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        https://github.com/RafaIbarra
+                      </a>
+                    </Descriptions.Item>
+                  </Descriptions>
+              <div style={{ marginTop:'20px',display: 'flex', flexDirection: 'row', gap: '20px' }}>
+                  <div style={{height:'300px', flex: 3,justifyItems:'center'}}>
+                    <Descriptions style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}} title="FRAMEWORKS"/>
+                    <FrameworksGraficos datacantidades={datacantidades} />
+                  </div>
+                  <div style={{height:'200px', flex: 7,justifyItems:'center'}}>
+                    
+                    <Descriptions  style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}}  title="LENGUAJES"/>
+                    <LenguajesGraficos datalenguajes={datalenguajes} />
+                  </div>
+              </div>
+            </section>
+            <section id="works" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
+              {
+              
+              dataproyectos.map(item => (<Proyecto itemdata={item} key={item.Sistema}></Proyecto>))
+              }
+            </section>
           </>
         )
       }
