@@ -109,7 +109,7 @@ function Nombre(){
           }
         });
         const repoLanguages = await languagesResponse.json();
-        console.log('repoLanguages', repoLanguages)
+        
         // Filtrar y guardar SOLO los frameworks de interés
         for (const [language, bytes] of Object.entries(repoLanguages)) {
           if (frameworksToInclude.some(framework => 
@@ -515,7 +515,7 @@ const fetchAutoDetectedFrameworks = async () => {
       });
     });
 
-    console.log('Detalle completo de frameworks:', frameworkDetails);
+    
     return {
       details: frameworkDetails
     };

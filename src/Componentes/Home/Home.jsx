@@ -18,7 +18,7 @@ function Home(){
           //body: JSON.stringify({ query }),
         })
            const data = await response.json();
-           console.log(data)
+           
            setFrameworksDetails(data.detalles)
              //await fetchAutoDetectedFrameworks()
              setLoading(false)

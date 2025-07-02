@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 
-// 📦 Importación de imágenes
 import Dockerfile from '../../assets/docker.png';
 import CSS from '../../assets/css.svg';
 import JavaScript from '../../assets/javascript.png';
@@ -10,7 +9,7 @@ import TypeScript from '../../assets/typescript.png';
 import Java from '../../assets/java2.png';
 import HTML from '../../assets/html.png';
 import Shell from '../../assets/Shell.png';
-import Others from '../../assets/othersv2.png'; // Asegurate de tener esta imagen
+import Others from '../../assets/othersv2.png'; 
 
 const LenguajesGraficos = ({ datalenguajes }) => {
   const chartRef = useRef(null);
@@ -67,7 +66,7 @@ const LenguajesGraficos = ({ datalenguajes }) => {
             type: 'pictorialBar',
             barCategoryGap: '-130%',
             symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
-            emphasis: { itemStyle: { opacity: 1 } },
+            
             data: datalenguajes.map((item, index) => ({
               value: item.valor,
               itemStyle: { color: colores[index % colores.length],opacity: 0.5 }

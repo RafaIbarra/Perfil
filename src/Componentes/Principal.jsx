@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { Button,Descriptions} from 'antd';
+import { Button,Descriptions, Row, Col,Divider} from 'antd';
 import {
   UserOutlined,
   
@@ -7,9 +7,6 @@ import {
   MailOutlined
 } from '@ant-design/icons';
 import './principal.css'
-import AboutSection from './AboutSection/AboutSection';
-import WorksSection from './WorksSection/WorksSection';
-import ExperienceSection from './ExperienceSection/ExperienceSectionv2';
 import Generarpeticion from '../Peticiones/apipeticiones';
 import FrameworksGraficos from './Graficos/FrameworksGraficos';
 import LenguajesGraficos from './Graficos/LenguajesGraficos';
@@ -140,10 +137,29 @@ const Principal = () => {
               </div>
             </section>
             <section id="works" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-              {
               
-              dataproyectos.map(item => (<Proyecto itemdata={item} key={item.Sistema}></Proyecto>))
-              }
+               {(() => {
+                  const chunkedData = [];
+                  for (let i = 0; i < dataproyectos.length; i += 2) {
+                    chunkedData.push(dataproyectos.slice(i, i + 2));
+                  }
+
+                  return chunkedData.map((rowItems, rowIndex) => (
+                    <div key={rowIndex}>
+                      <Row gutter={[16, 16]}>
+                        {rowItems.map((item) => (
+                          <Col key={item.id} xs={24} sm={12}>
+                            
+
+                              <Proyecto itemdata={item} />
+                            
+                          </Col>
+                        ))}
+                      </Row>
+                      {rowIndex !== chunkedData.length - 1 && <Divider />}
+                    </div>
+                  ));
+                })()}
             </section>
           </>
         )
