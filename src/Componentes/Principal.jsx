@@ -1,16 +1,19 @@
 import React,{useEffect,useState} from 'react';
-import { Button,Descriptions, Row, Col,Divider,FloatButton} from 'antd';
+import { Button,Descriptions, Row, Col,Divider,FloatButton,Typography } from 'antd';
 import {UserOutlined,CodeOutlined,MailOutlined} from '@ant-design/icons';
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
 import FrameworksGraficos from './Graficos/FrameworksGraficos';
 import LenguajesGraficos from './Graficos/LenguajesGraficos';
+import About from './About/About';
 import Proyecto from './Proyecto/Proyecto';
+const { Text, Link } = Typography;
 const Principal = () => {
   const [loading,setLoading]=useState(false)
   const [datacantidades,setDatacantidades]=useState([])
   const [datalenguajes,setDatalenguajes]=useState([])
   const [dataproyectos,setDataproyectos]=useState([])
+  const [scrolled, setScrolled] = useState(false);
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -47,70 +50,110 @@ const Principal = () => {
     }
     cargadatos()
   }, []);
+  useEffect(() => {
+    
+    const handleScroll = () => {
+      
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    <div 
-    className="portfolio-container"
-    >
+    <div className="portfolio-container">
       
       <div className="nav-buttons" 
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems:'center',
-        padding: '20px 0',
-        background: '#fff',
-        position: 'sticky',
-        top: 0,
-        height:'10px',
-        zIndex: 100,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-      }}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems:'center',
+          padding: '20px 0',
+          // background: '#fff',
+          position: 'sticky',
+          top: 0,
+          height:'80px',
+          zIndex: 100,
+          borderBottom: scrolled ? '2px solid #f0f0f0' : 'none',
+          boxSizing: 'border-box',
+          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          transition: 'all 0.3s ease'
+        }}
       >
-        <Button 
-          type="text" 
-          icon={<UserOutlined />} 
-          onClick={() => scrollToSection('about')}
-        >
-          Acerca de mí
-        </Button>
-        <Button 
-          type="text" 
-          icon={<UserOutlined />} 
-          onClick={() => scrollToSection('experience')}
-        >
-          Experiencia
-        </Button>
-        <Button 
-          type="text" 
-          icon={<CodeOutlined />} 
-          onClick={() => scrollToSection('works')}
-        >
-          Trabajos
-        </Button>
-          <Button 
-            type="text" 
-            icon={<CodeOutlined />} 
-            onClick={() => scrollToSection('skills')}
-          >
-            Skills
-          </Button>
-        <Button 
-          type="text" 
-          icon={<MailOutlined />} 
-          onClick={() => scrollToSection('contact')}
-        >
-          Contacto
-        </Button>
-      </div>
+        
+
+            <div style={{ marginLeft: '10px'}}>
+              <Text type="secondary" 
+              // style={{ fontSize: '20px' }}
+              style={{ 
+                  fontSize: '30px',
+                  background: 'linear-gradient(90deg,rgb(15, 30, 236), #8a2be2)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  display: 'inline-block'
+                }}
+              >Rafael Ibarra</Text>
+            </div>
+            <div style={{ 
+                display: 'flex', 
+                gap: '8px',
+                marginLeft: 'auto' 
+              }}>
+
+                <Button 
+                  type="text" 
+                  icon={<UserOutlined />} 
+                  onClick={() => scrollToSection('about')}
+                >
+                  Acerca de mí
+                </Button>
+                <Button 
+                  type="text" 
+                  icon={<UserOutlined />} 
+                  onClick={() => scrollToSection('experience')}
+                >
+                  Experiencia
+                </Button>
+                <Button 
+                  type="text" 
+                  icon={<CodeOutlined />} 
+                  onClick={() => scrollToSection('works')}
+                >
+                  Trabajos
+                </Button>
+                <Button 
+                    type="text" 
+                    icon={<CodeOutlined />} 
+                    onClick={() => scrollToSection('skills')}
+                  >
+                    Skills
+                </Button>
+                <Button 
+                  type="text" 
+                  icon={<MailOutlined />} 
+                  onClick={() => scrollToSection('contact')}
+                >
+                  Contacto
+                </Button>
+              </div>
+        </div>
+        
       {
         loading ? (<span> cargango </span>):
         (
           <>
-            <section id="about" className="section" 
-            style={{ minHeight: '100vh', padding: '40px' }}
+            <section id="about" className="section-bg" 
+            // style={{ minHeight: '100vh', padding: '40px' }}
+            
             >
-                
+                <About/>
             </section>
             <section id="experience" className="section" 
             style={{ minHeight: '100vh', padding: '40px' }}

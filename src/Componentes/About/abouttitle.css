@@ -1,0 +1,31 @@
+/* Estilos base (mobile-first) */
+.about-title {
+  font-size: 2.25rem;    /* text-4xl - 36px */
+  font-weight: 700;      /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 - 24px */
+  line-height: 1.2;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para el span con gradiente */
+.about-title span {
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  
+}
+
+/* Media queries (responsive) */
+@media (min-width: 640px) {  /* sm: */
+  .about-title {
+    font-size: 3rem;      /* text-5xl - 48px */
+  }
+}
+
+@media (min-width: 1024px) { /* lg: */
+  .about-title {
+    font-size: 3.75rem;   /* text-6xl - 60px */
+  }
+}

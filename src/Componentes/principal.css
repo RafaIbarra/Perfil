@@ -24,6 +24,12 @@
 }
 
 
+.section-bg {
+  padding-top: 4rem;   /* pt-16 */
+  padding-bottom: 5rem; /* pb-20 */
+  background-image: linear-gradient(to bottom right, #eff6ff, #f5f3ff); /* blue-50 to purple-50 */
+}
+
 
 /* .nav-buttons {
   display: flex;

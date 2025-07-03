@@ -1,0 +1,127 @@
+:root {
+  --font-primary: 'Poppins', sans-serif;
+}
+
+.main-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;   /* 16px */
+  padding-right: 1rem;  /* 16px */
+  
+}
+
+/* Comportamiento del "container" en Tailwind */
+@media (min-width: 640px) {
+  .main-container {
+    max-width: 640px;
+    padding-left: 1.5rem;  /* 24px */
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    max-width: 1024px;
+    padding-left: 2rem;  /* 32px */
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .main-container {
+    max-width: 1536px;
+  }
+}
+
+/*************************************************/
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem; /* 48px */
+}
+
+@media (min-width: 1024px) { /* lg */
+  .flex-container {
+    flex-direction: row;
+  }
+}
+
+/********************************/
+.flex-text {
+  flex: 1 1 0%;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .flex-text {
+    text-align: left;
+  }
+}
+/****************************/
+.about-title {
+  font-size: 2.25rem;    /* text-4xl - 36px */
+  font-weight: 700;      /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 - 24px */
+  line-height: 1.2;
+  font-family: var(--font-primary);
+}
+
+/* Estilos para el span con gradiente */
+.about-title span {
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  
+}
+
+/* Media queries (responsive) */
+@media (min-width: 640px) {  /* sm: */
+  .about-title {
+    font-size: 3rem;      /* text-5xl - 48px */
+  }
+}
+
+@media (min-width: 1024px) { /* lg: */
+  .about-title {
+    font-size: 3.75rem;   /* text-6xl - 60px */
+  }
+}
+/***************************/
+.subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;     /* text-xl */
+  color: var(--muted-foreground, #6b7280); /* fallback si no hay var */
+  margin-bottom: 2rem;    /* mb-8 */
+}
+
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 1.5rem;     /* sm:text-2xl */
+  }
+}
+
+/***************/
+.text-block {
+  font-family: var(--font-primary);
+  font-size: 1.125rem; /* text-lg */
+  color: var(--muted-foreground, #6b7280); /* usa variable o color de fallback */
+  margin-bottom: 2rem; /* mb-8 */
+  max-width: 42rem; /* max-w-2xl */
+}
