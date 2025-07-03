@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Typography,Avatar, Card,Tabs,Row, Col,Descriptions } from 'antd';
+import { Typography,Avatar, Card,Tabs,Row, Descriptions } from 'antd';
 const { Title } = Typography;
 
 const Proyecto = ({itemdata}) => {
@@ -14,6 +14,7 @@ const Proyecto = ({itemdata}) => {
           setDatabackend(itemdata['detalle_backend'][0])
           setDatafronted(itemdata['detalle_frontend'][0])
           setDatamovil(itemdata['detalle_movil'][0])
+          
         }
         cargadatos()
       }, []);
@@ -118,11 +119,15 @@ const Proyecto = ({itemdata}) => {
           // style={{ width: 300 }}
           style={{
             width: '100%',
-            height: 400,         
-            overflowY: 'auto',   
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between' // distribuye el espacio
+    height: 400,
+    overflowY: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    backgroundColor: '#ffffff', // blanco o un gris claro
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // sombra suave y difusa
+    borderRadius: '10px', // bordes redondeados
+    padding: '16px', // espacio interno
           }}
           >
           <Card.Meta
@@ -138,27 +143,33 @@ const Proyecto = ({itemdata}) => {
                   type="card"
                   size="small"
                   items={[
-                    {
-                        label: 'Backend',
-                        key: '1',
-                        children: (
-                            <ComponentBackend></ComponentBackend>
-                        ),
-                    },
-                    {
-                        label: 'Movil',
-                        key: '2',
-                        children: (
-                            <ComponentMovil></ComponentMovil>
-                        ),
-                    },
-                     {
-                        label: 'Web',
-                        key: '3',
-                        children: (
-                            <Componentfronted></Componentfronted>
-                        ),
-                    },
+                    ...(datafronted.Framework
+                        ? [
+                            {
+                              label: 'Backend',
+                              key: '1',
+                              children: <ComponentBackend/>
+                            }
+                          ]
+                      : []),
+                    ...(datamovil.Framework
+                      ? [
+                          {
+                            label: 'Movil',
+                            key: '2',
+                            children: <ComponentMovil/>
+                          }
+                        ]
+                      : []),
+                    ...(datafronted.Framework
+                      ? [
+                          {
+                            label: 'Web',
+                            key: '3',
+                            children: <Componentfronted />
+                          }
+                        ]
+                      : [])
                   ]}
                  >
                     

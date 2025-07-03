@@ -1,18 +1,14 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    
 }
 
 .landing {
-    background-image: url('/public/background-1086840.svg'); /* Ruta al archivo SVG */
-    background-size: cover; /* Asegura que la imagen cubra el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: 100vw;
-    height: 100vh;
+    width: calc(100vw - 90px); 
+    min-height: calc(100vh - 30px); 
+    margin: 0 45px 30px 45px; 
     display: flex;
     justify-content: center;
-    align-items: center;
-    color: white; /* Cambia el color del texto si es necesario */
+    
 }

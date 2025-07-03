@@ -1,11 +1,6 @@
 import React,{useEffect,useState} from 'react';
-import { Button,Descriptions, Row, Col,Divider} from 'antd';
-import {
-  UserOutlined,
-  
-  CodeOutlined,
-  MailOutlined
-} from '@ant-design/icons';
+import { Button,Descriptions, Row, Col,Divider,FloatButton} from 'antd';
+import {UserOutlined,CodeOutlined,MailOutlined} from '@ant-design/icons';
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
 import FrameworksGraficos from './Graficos/FrameworksGraficos';
@@ -54,18 +49,24 @@ const Principal = () => {
   }, []);
 
   return (
-    <div className="portfolio-container">
+    <div 
+    className="portfolio-container"
+    >
       
-      <div className="nav-buttons" style={{
+      <div className="nav-buttons" 
+      style={{
         display: 'flex',
         justifyContent: 'center',
+        alignItems:'center',
         padding: '20px 0',
         background: '#fff',
         position: 'sticky',
         top: 0,
+        height:'10px',
         zIndex: 100,
         boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-      }}>
+      }}
+      >
         <Button 
           type="text" 
           icon={<UserOutlined />} 
@@ -106,37 +107,19 @@ const Principal = () => {
         loading ? (<span> cargango </span>):
         (
           <>
-            <section id="about" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-                {/* <AboutSection datacantidades={datacantidades} /> */}
+            <section id="about" className="section" 
+            style={{ minHeight: '100vh', padding: '40px' }}
+            >
+                
             </section>
-            <section id="experience" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-              {/* <ExperienceSection datalenguajes={datalenguajes} /> */}
+            <section id="experience" className="section" 
+            style={{ minHeight: '100vh', padding: '40px' }}
+            >
+              
             </section>
-            <section id="skills" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
-              <Descriptions title="Datos repositorio">     
-                    <Descriptions.Item label="Perfil">
-                      <a 
-                        href="https://github.com/RafaIbarra" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        https://github.com/RafaIbarra
-                      </a>
-                    </Descriptions.Item>
-                  </Descriptions>
-              <div style={{ marginTop:'20px',display: 'flex', flexDirection: 'row', gap: '20px' }}>
-                  <div style={{height:'300px', flex: 3,justifyItems:'center'}}>
-                    <Descriptions style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}} title="FRAMEWORKS"/>
-                    <FrameworksGraficos datacantidades={datacantidades} />
-                  </div>
-                  <div style={{height:'200px', flex: 7,justifyItems:'center'}}>
-                    
-                    <Descriptions  style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}}  title="LENGUAJES"/>
-                    <LenguajesGraficos datalenguajes={datalenguajes} />
-                  </div>
-              </div>
-            </section>
-            <section id="works" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
+            <section id="works" className="section" 
+            style={{ minHeight: '100vh', padding: '40px' }}
+            >
               
                {(() => {
                   const chunkedData = [];
@@ -161,6 +144,42 @@ const Principal = () => {
                   ));
                 })()}
             </section>
+            <section id="skills" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
+              <Descriptions title="Datos repositorio">     
+                    <Descriptions.Item label="Perfil">
+                      <a 
+                        href="https://github.com/RafaIbarra" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        https://github.com/RafaIbarra
+                      </a>
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Otras Estadisticas:">
+                      <a 
+                        href="https://profile-summary-for-github.com/user/RafaIbarra" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        https://profile-summary-for-github.com/user/RafaIbarra
+                      </a>
+                    </Descriptions.Item>
+                  </Descriptions>
+              <div style={{ marginTop:'20px',display: 'flex', flexDirection: 'row', gap: '20px' }}>
+                  <div style={{height:'300px', flex: 3,justifyItems:'center'}}>
+                    <Descriptions style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}} title="FRAMEWORKS"/>
+                    <FrameworksGraficos datacantidades={datacantidades} />
+                  </div>
+                  <div style={{height:'200px', flex: 7,justifyItems:'center'}}>
+                    
+                    <Descriptions  style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}}  title="LENGUAJES"/>
+                    <LenguajesGraficos datalenguajes={datalenguajes} />
+                  </div>
+              </div>
+            </section>
+             <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 }}>
+                <FloatButton.BackTop visibilityHeight={500} />
+             </FloatButton.Group>
           </>
         )
       }
@@ -174,7 +193,5 @@ const Principal = () => {
   );
 };
 
-// Componentes de cada sección (igual que en la opción anterior)
-// ...
 
 export default Principal;
