@@ -1,0 +1,11 @@
+.ant-card.custom-hover {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra inicial */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ant-card.custom-hover:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* shadow-xl estilo Tailwind */
+  transform: translateY(-4px); /* sutil elevación */
+}

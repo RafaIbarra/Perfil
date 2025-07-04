@@ -89,8 +89,7 @@ const Principal = () => {
         
 
             <div style={{ marginLeft: '10px'}}>
-              <Text type="secondary" 
-              // style={{ fontSize: '20px' }}
+              {/* <Text type="secondary" 
               style={{ 
                   fontSize: '30px',
                   background: 'linear-gradient(90deg,rgb(15, 30, 236), #8a2be2)',
@@ -99,7 +98,12 @@ const Principal = () => {
                   color: 'transparent',
                   display: 'inline-block'
                 }}
-              >Rafael Ibarra</Text>
+              >Rafael Ibarra</Text> */}
+              <span className="name-text" onClick={() => scrollToSection('about')}>
+                  Rafael Ibarra            
+              </span>
+
+
             </div>
             <div style={{ 
                 display: 'flex', 
@@ -160,32 +164,41 @@ const Principal = () => {
             >
               
             </section>
-            <section id="works" className="section" 
-            style={{ minHeight: '100vh', padding: '40px' }}
+            <section id="works"  className="section-muted"
             >
-              
-               {(() => {
-                  const chunkedData = [];
-                  for (let i = 0; i < dataproyectos.length; i += 2) {
-                    chunkedData.push(dataproyectos.slice(i, i + 2));
-                  }
+              <div  className="main-container-section">
+                <div className="text-center-block">
+                  <h2 className="titulo-section">Proyectos Destacados</h2>
+                  <p className="text-block">
+                    Una selección de mis trabajos más recientes y significativos
+                  </p>
+                </div>
+                
 
-                  return chunkedData.map((rowItems, rowIndex) => (
-                    <div key={rowIndex}>
-                      <Row gutter={[16, 16]}>
-                        {rowItems.map((item) => (
-                          <Col key={item.id} xs={24} sm={12}>
-                            
+                  {(() => {
+                      const chunkedData = [];
+                      for (let i = 0; i < dataproyectos.length; i += 2) {
+                        chunkedData.push(dataproyectos.slice(i, i + 2));
+                      }
 
-                              <Proyecto itemdata={item} />
-                            
-                          </Col>
-                        ))}
-                      </Row>
-                      {rowIndex !== chunkedData.length - 1 && <Divider />}
-                    </div>
-                  ));
-                })()}
+                      return chunkedData.map((rowItems, rowIndex) => (
+                        <div key={rowIndex}>
+                          <Row gutter={[16, 16]}>
+                            {rowItems.map((item) => (
+                              <Col key={item.id} xs={24} sm={12}>
+                                
+
+                                  <Proyecto itemdata={item} />
+                                
+                              </Col>
+                            ))}
+                          </Row>
+                          {rowIndex !== chunkedData.length - 1 && <Divider />}
+                        </div>
+                      ));
+                    })()}
+                
+              </div>
             </section>
             <section id="skills" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
               <Descriptions title="Datos repositorio">     

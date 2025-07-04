@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Typography,Avatar, Card,Tabs,Row, Descriptions } from 'antd';
-import './proyecto.css'
+import { Typography,Avatar, Card,Col,Row, Descriptions } from 'antd';
 const { Title } = Typography;
 
 const Proyecto = ({itemdata}) => {
@@ -21,6 +20,8 @@ const Proyecto = ({itemdata}) => {
       }, []);
     const ComponentBackend=()=>{
         return(
+          <Card title="Backend" variant="borderless">
+
             <Descriptions column={1}  size="small">
                 
                 <Descriptions.Item label="Repositorio">
@@ -50,6 +51,7 @@ const Proyecto = ({itemdata}) => {
                 
                 
             </Descriptions>
+          </Card>
         )
       }
     const Componentfronted=()=>{
@@ -116,75 +118,45 @@ const Proyecto = ({itemdata}) => {
         )
       }
     return(
-        <Card size="small" loading={loading}  hoverable={true}
-          className="custom-hover"
-          // style={{
-          //   width: '100%',
-          //   height: 400,
-          //   overflowY: 'auto',
-          //   display: 'flex',
-          //   flexDirection: 'column',
-          //   justifyContent: 'space-between',
-          //   backgroundColor: '#ffffff', 
-          //   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', 
-          //   borderRadius: '10px', 
-          //   padding: '16px', 
-          // }}
+        <Card size="small" loading={loading}
+          // style={{ width: 300 }}
           style={{
             width: '100%',
             height: 400,
+            overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            backgroundColor: '#ffffff',
-            padding: '16px'
+            backgroundColor: '#ffffff', // blanco o un gris claro
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // sombra suave y difusa
+            borderRadius: '10px', // bordes redondeados
+            padding: '16px', // espacio interno
           }}
           >
           <Card.Meta
             
             avatar={<Avatar src={itemdata.Logo} />}
-           
+            
             title={itemdata.Sistema}
             description={
               <>
                 <p>{itemdata.Descripcion}</p>
-                
-                 <Tabs
-                  type="card"
-                  size="small"
-                  centered
-                  items={[
-                    ...(datafronted.Framework
-                        ? [
-                            {
-                              label: 'Backend',
-                              key: '1',
-                              children: <ComponentBackend/>
-                            }
-                          ]
-                      : []),
-                    ...(datamovil.Framework
-                      ? [
-                          {
-                            label: 'Movil',
-                            key: '2',
-                            children: <ComponentMovil/>
-                          }
-                        ]
-                      : []),
-                    ...(datafronted.Framework
-                      ? [
-                          {
-                            label: 'Web',
-                            key: '3',
-                            children: <Componentfronted />
-                          }
-                        ]
-                      : [])
-                  ]}
-                 >
-                    
-                 </Tabs>
+                <Row gutter={16}>
+                  <Col span={8}>
+                    <ComponentBackend/>
+                  </Col>
+                  <Col span={8}>
+                    <Card title="Card title" variant="borderless">
+                      Card content
+                    </Card>
+                  </Col>
+                  <Col span={8}>
+                    <Card title="Card title" variant="borderless">
+                      Card content
+                    </Card>
+                  </Col>
+                 </Row>
+               
                   
               </>
             

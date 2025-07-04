@@ -1,5 +1,6 @@
 :root {
-  --font-primary: 'Poppins', sans-serif;
+  /* --font-primary: 'Poppins', sans-serif; */
+   --font-primary:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
 
 .main-container {
@@ -82,15 +83,33 @@
 }
 
 /* Estilos para el span con gradiente */
-.about-title span {
+/* .about-title span {
   background: linear-gradient(90deg, #8a2be2, #da70d6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   display: inline-block;
   
+} */
+.gradient-text {
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+.blinking-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #8a2be2; /* o cualquier color visible si no usás gradiente */
+  animation: blink 1s step-start infinite;
 }
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 /* Media queries (responsive) */
 @media (min-width: 640px) {  /* sm: */
   .about-title {
@@ -124,4 +143,76 @@
   color: var(--muted-foreground, #6b7280); /* usa variable o color de fallback */
   margin-bottom: 2rem; /* mb-8 */
   max-width: 42rem; /* max-w-2xl */
+}
+
+/************************************************************/
+.button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .button-group {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button-group {
+    justify-content: flex-start;
+  }
+}
+/**********************************************************************/
+.primary-button {
+  font-family: var(--font-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.5rem; /* similar a Tailwind size-lg */
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem; /* rounded-md */
+
+  background-image: linear-gradient(to right, #2563eb, #9333ea); /* blue-600 to purple-600 */
+  color: white;
+  cursor: pointer;
+  transition: background-image 0.3s ease;
+  
+}
+
+.primary-button:hover {
+  background-image: linear-gradient(to right, #1d4ed8, #7e22ce); /* blue-700 to purple-700 */
+}
+/************************/
+
+.flex-section {
+  flex: 1 1 0%;
+  max-width: 28rem; /* 448px */
+}
+/************************/
+.gradient-glow {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, #2563eb, #9333ea);
+  border-radius: 9999px;
+  filter: blur(64px);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.profile-image {
+  position: relative;
+  z-index: 1; /* Asegura que quede encima */
+  border-radius: 9999px;
+  border: 4px solid white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.dark .profile-image {
+  border-color: #1f2937;         /* dark:border-gray-800 */
 }
