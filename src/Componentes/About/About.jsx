@@ -51,7 +51,7 @@ function About(){
                         </span>
                     </h1>
                     <p className="subtitle">Desarrollador Full-Stack & Mobile</p>
-                    <p className="text-block">
+                    <p className="text-block-about">
                     Especializado en crear experiencias digitales excepcionales con tecnologías modernas. Desde aplicaciones
                     web responsivas hasta apps móviles nativas, transformo ideas en soluciones tecnológicas.
                     </p>

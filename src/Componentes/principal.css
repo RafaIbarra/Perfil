@@ -3,7 +3,7 @@
    --font-primary:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
 .portfolio-container {
-  max-width: 100vw;
+  width: 100vw;
   min-height: 100vh;    
   
 }
@@ -29,9 +29,12 @@
 
 
 .section-bg {
-  padding-top: 4rem;   /* pt-16 */
-  padding-bottom: 5rem; /* pb-20 */
-  background-image: linear-gradient(to bottom right, #eff6ff, #f5f3ff); /* blue-50 to purple-50 */
+  padding-top: 4rem;   
+  padding-bottom: 5rem; 
+  background-image: linear-gradient(to bottom right, #eff6ff, #f5f3ff); 
+  
+  max-width: 100%;
+
 }
 
 .name-text {
@@ -66,7 +69,7 @@
 }
 
 .main-container-section {
-  width: 100%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;

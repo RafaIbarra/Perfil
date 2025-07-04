@@ -153,17 +153,23 @@ const Principal = () => {
         loading ? (<span> cargango </span>):
         (
           <>
-            <section id="about" className="section-bg" 
+            <section id="about" 
+            // style={{backgroundColor:'red',minHeight:'100vh'}}
+            className="section-bg" 
             // style={{ minHeight: '100vh', padding: '40px' }}
-            
+            // style={{maxWidth:'100%',minHeight:'300px',backgroundColor:'red'}}
             >
+              
                 <About/>
             </section>
+
+
             <section id="experience" className="section" 
             style={{ minHeight: '100vh', padding: '40px' }}
             >
               
             </section>
+
             <section id="works"  className="section-muted"
             >
               <div  className="main-container-section">
@@ -173,6 +179,7 @@ const Principal = () => {
                     Una selección de mis trabajos más recientes y significativos
                   </p>
                 </div>
+                
                 
 
                   {(() => {
@@ -198,8 +205,11 @@ const Principal = () => {
                       ));
                     })()}
                 
+                
               </div>
             </section>
+
+
             <section id="skills" className="section" style={{ minHeight: '100vh', padding: '40px' }}>
               <Descriptions title="Datos repositorio">     
                     <Descriptions.Item label="Perfil">

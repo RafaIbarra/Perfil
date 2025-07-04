@@ -4,7 +4,7 @@
 }
 
 .main-container {
-  width: 100%;
+  max-width:  100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;   /* 16px */
@@ -137,7 +137,7 @@
 }
 
 /***************/
-.text-block {
+.text-block-about {
   font-family: var(--font-primary);
   font-size: 1.125rem; /* text-lg */
   color: var(--muted-foreground, #6b7280); /* usa variable o color de fallback */
