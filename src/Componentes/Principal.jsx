@@ -3,7 +3,8 @@ import { Button,Descriptions, Row, Col,Divider,FloatButton,Typography } from 'an
 import {UserOutlined,CodeOutlined,MailOutlined} from '@ant-design/icons';
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
-import Skills from './Skills/Skills';
+// import Skills from './Skills/Skills';
+import Skills from './Skills/Skillsv3';
 import About from './About/About';
 import ProytectoHome from './Proyecto/ProytectoHome';
 const { Text, Link } = Typography;

@@ -20,18 +20,14 @@ import * as MdIcons from "react-icons/md";
 function Skills({datacantidades,datalenguajes}){
    const [cargado,setcargado]=useState(false)
     const Categorias=[
-      
-      
+
       { 'name': 'Lenguajes',  'icon': 'FaLaptopCode' },
       { 'name': 'Base Datos',  'icon': 'FaDatabase' },
       { 'name': 'Backend',  'icon': 'AiFillDatabase' },
       { 'name': 'Frontend-Movile','icon': 'FaFileCode' },
       { 'name': 'Data',  'icon': 'MdOutlineScience' },
       { 'name': 'Infraestructura',  'icon': 'FaDev' },
-      
-      
 
-       
     ]
     const IconMap = {
       ...FaIcons,
