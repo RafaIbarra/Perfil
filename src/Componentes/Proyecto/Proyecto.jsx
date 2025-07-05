@@ -133,6 +133,8 @@ const Proyecto = ({itemdata}) => {
           style={{
             width: '100%',
             height: 400,
+             overflowY: 'auto',
+             overflowX: 'auto',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',

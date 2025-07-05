@@ -67,7 +67,11 @@
   padding-bottom: 5rem;
   background-color: rgba(210, 220, 235, 0.3); /* gris con opacidad */
 }
-
+.section-skills {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(33, 109, 224, 0.3); /* gris con opacidad */
+}
 .main-container-section {
   width: 90%;
   margin-left: auto;
