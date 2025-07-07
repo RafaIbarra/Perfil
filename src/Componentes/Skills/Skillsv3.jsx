@@ -1,5 +1,6 @@
 // Skills.js
 import React from 'react';
+import { Descriptions} from 'antd';
 import { FaFileCode } from "react-icons/fa";
 import { FaDatabase } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa";
@@ -7,28 +8,30 @@ import { FaDev } from "react-icons/fa";
 import { DiCodeBadge } from "react-icons/di";
 import { AiFillDatabase } from "react-icons/ai";
 import { MdOutlineScience } from "react-icons/md";
-
-
+import { GrDeploy } from "react-icons/gr";
+import FrameworksGraficos from '../Graficos/FrameworksGraficos';
+import LenguajesGraficos from '../Graficos/LenguajesGraficos';
 
 import * as FaIcons from "react-icons/fa";
 import * as DiIcons from "react-icons/di";
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
+import * as GrIcons from "react-icons/gr";
 
 import './skills_css.css';
 
 // Importar iconos de lucide-react
-import { Code, Server, Smartphone, Database } from "lucide-react";
 
-function Skills() {
+
+function Skills({datacantidades,datalenguajes}) {
   const skillCategories = [
     {
       title: "Lenguajes",
       icon: 'FaLaptopCode',
       skills: [
-        { 'name': 'JavaScript','categoria':'Lenguajes','logoKey': 'javascript','wordmark':false },
-        { 'name': 'TypeScript','categoria':'Lenguajes','logoKey': 'typescript','wordmark':false },
-        { 'name': 'Python','categoria':'Lenguajes','logoKey': 'python','wordmark':false },
+        { 'name': 'JavaScript','logoKey': 'javascript','wordmark':false },
+        { 'name': 'TypeScript','logoKey': 'typescript','wordmark':false },
+        { 'name': 'Python','logoKey': 'python','wordmark':false },
       ],
       color: "blue",
     },
@@ -36,11 +39,11 @@ function Skills() {
       title: "Backend",
       icon: "AiFillDatabase",
       skills: [
-        { 'name': 'Django','categoria':'Backend','logoKey': 'django','wordmark':true },
-        { 'name': 'Django REST Framework ','categoria':'Backend','logoKey': 'djangorest','wordmark':false },
-        { 'name': 'FastAPI','categoria':'Backend','logoKey': 'fastapi','wordmark':false },
-        { 'name': 'Express','categoria':'Backend','logoKey': 'express','wordmark':true },
-        { 'name': 'Node.js','categoria':'Backend','logoKey': 'nodejs','wordmark':true },
+        { 'name': 'Django','logoKey': 'django','wordmark':true },
+        { 'name': 'Django REST Framework ','logoKey': 'djangorest','wordmark':false },
+        { 'name': 'FastAPI','logoKey': 'fastapi','wordmark':false },
+        { 'name': 'Express','logoKey': 'express','wordmark':true },
+        { 'name': 'Node.js','logoKey': 'nodejs','wordmark':true },
       ],
       color: "green",
     },
@@ -48,9 +51,9 @@ function Skills() {
       title: "Base Datos",
       icon: 'FaDatabase',
       skills: [
-        { 'name': 'SQL Server','categoria':'Base Datos','logoKey': 'microsoftsqlserver','wordmark':true },
-        { 'name': 'MySQL','categoria':'Base Datos','logoKey': 'mysql','wordmark':false },
-        { 'name': 'PostgreSQL','categoria':'Base Datos','logoKey': 'postgresql','wordmark':false },
+        { 'name': 'SQL Server','logoKey': 'microsoftsqlserver','wordmark':false },
+        { 'name': 'MySQL','logoKey': 'mysql','wordmark':false },
+        { 'name': 'PostgreSQL','logoKey': 'postgresql','wordmark':false },
       ],
       color: "purple",
     },
@@ -58,33 +61,69 @@ function Skills() {
       title: "Frontend-Movile",
       icon: 'FaFileCode',
       skills: [
-        { 'name': 'React','categoria':'Frontend-Movile','logoKey': 'react','wordmark':true },
-      { 'name': 'React-Native','categoria':'Frontend-Movile','logoKey': 'react','wordmark':false },
+        { 'name': 'React','logoKey': 'react','wordmark':true },
+        { 'name': 'React-Native','logoKey': 'react','wordmark':false },
+        { 'name': 'Expo-GO','logoKey': 'expo','wordmark':false },
       ],
       color: "orange",
+    },
+    {
+      title: "Infraestructura",
+      icon: 'FaDev',
+      skills: [
+        { 'name': 'Git','logoKey': 'git','wordmark':true },
+        { 'name': 'Nginx','logoKey': 'nginx','wordmark':false },
+        { 'name': 'Ubuntu','logoKey': 'ubuntu','wordmark':true },
+      ],
+      color: "black",
+    },
+    {
+      title: "Data",
+      icon: 'MdOutlineScience',
+      skills: [
+        { 'name': 'Pandas','logoKey': 'pandas','wordmark':true },
+        { 'name': 'Matplotlib','logoKey': 'matplotlib','wordmark':false },
+      ],
+      color: "yellow",
+    },
+    {
+      title: "Despliegue",
+      icon: 'GrDeploy',
+      skills: [
+        { 'name': 'Vercel','logoKey': 'vercel','wordmark':false },
+        { 'name': 'Render','logoKey': 'render','wordmark':false },
+      ],
+      color: "despliegue",
     },
   ];
   const IconMap = {
         ...FaIcons,
         ...DiIcons,
         ...AiIcons,
-        ...MdIcons
+        ...MdIcons,
+        ...GrIcons
+
+
       };
-  const traer_img = (valor,wordmark)=>{
-      if(valor==='django'){
-        return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${valor}/${valor}-plain-wordmark.svg`
-               
-      }else{
 
-        if(wordmark){
-          return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${valor}/${valor}-original-wordmark.svg`
-        }else{
-  
-          return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${valor}/${valor}-original.svg`
-        }
-      }
+const traer_img = (valor, wordmark) => {
+  // Casos especiales que usan imágenes locales en /public
+  const imagenesLocales = ['expo', 'render']; // Lista de valores especiales
+  if (imagenesLocales.includes(valor)) {
+    return `/${valor}.png`; // Ruta directa a la carpeta public
+  }
+
+  // Lógica original para Devicon
+  if (valor === 'django') {
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${valor}/${valor}-plain-wordmark.svg`;
+  } else {
+    if (wordmark) {
+      return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${valor}/${valor}-original-wordmark.svg`;
+    } else {
+      return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${valor}/${valor}-original.svg`;
     }
-
+  }
+};
   return (
     <section id="habilidades" className="skills-section">
       <div className="skills-container">
@@ -100,7 +139,9 @@ function Skills() {
             return (
             
             <div key={index} className={`skill-card ${category.color}`}>
+            
               <div className={`card-gradient gradient-${category.color}`}></div>
+              
               <div className="card-header">
                 <div className={`icon-container bg-${category.color}`}>
                     <IconComponent className="card-icon" />
@@ -115,7 +156,8 @@ function Skills() {
                         // src={skill.icon} 
                         src={traer_img(skill.logoKey,skill.wordmark)}
                         alt={skill.name} 
-                        className="skill-icon"
+                        // className="skill-icon"
+                        className={skill.logoKey === 'expo' || skill.logoKey === 'render' ? 'skill-icon-png' : 'skill-icon'}
                       />
                       <p className="skill-name">{skill.name}</p>
                     </div>
@@ -129,6 +171,40 @@ function Skills() {
         )
           
           }
+        </div>
+
+        <div >                
+            <Descriptions title="Datos repositorio">     
+                  <Descriptions.Item label="Perfil">
+                    <a 
+                      href="https://github.com/RafaIbarra" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      https://github.com/RafaIbarra
+                    </a>
+                  </Descriptions.Item>
+                  <Descriptions.Item label="Otras Estadisticas:">
+                    <a 
+                      href="https://profile-summary-for-github.com/user/RafaIbarra" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      https://profile-summary-for-github.com/user/RafaIbarra
+                    </a>
+                  </Descriptions.Item>
+            </Descriptions>
+            <div style={{ marginTop:'20px',display: 'flex', flexDirection: 'row', gap: '20px' }}>
+                <div style={{height:'300px', flex: 3,justifyItems:'center'}}>
+                  <Descriptions style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}} title="FRAMEWORKS"/>
+                  <FrameworksGraficos datacantidades={datacantidades} />
+                </div>
+                <div style={{height:'200px', flex: 7,justifyItems:'center'}}>
+                  
+                  <Descriptions  style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}}  title="LENGUAJES"/>
+                  <LenguajesGraficos datalenguajes={datalenguajes} />
+                </div>
+            </div>
         </div>
       </div>
     </section>

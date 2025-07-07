@@ -3,9 +3,14 @@ import React,{useState,useEffect} from "react";
 import {MailOutlined,CloudDownloadOutlined } from '@ant-design/icons';
 import "./main.css"
 const phrases = [
-  "Rafael Ibarra",
-  "Desarrollador Full-Stack",
-  "Desarrollador Mobile"
+  "Python",
+  "JavaScript",
+  "Django",
+  "Django REST Framework",
+  "React",
+  "React-Native",
+  "SQL Server",
+  "Ubuntu Desktop"
 ];
 function About(){
   const [index, setIndex] = useState(0);       // frase actual
@@ -46,11 +51,17 @@ function About(){
                     <h1 className="about-title">
                          Hola, soy{" "}
                          <span className="gradient-text">
-                           {phrases[index].substring(0, subIndex)}
-                           <span className="blinking-cursor">|</span>
+                           Rafael Ibarra
+                           
                         </span>
                     </h1>
                     <p className="subtitle">Desarrollador Full-Stack & Mobile</p>
+
+                    {/* <p className="herramientas-text">Python</p> */}
+                    <span className="herramientas-text">
+                           {phrases[index].substring(0, subIndex)}
+                           <span className="blinking-cursor">|</span>
+                        </span>
                     <p className="text-block-about">
                     Especializado en crear experiencias digitales excepcionales con tecnologías modernas. Desde aplicaciones
                     web responsivas hasta apps móviles nativas, transformo ideas en soluciones tecnológicas.

@@ -136,6 +136,23 @@
   }
 }
 
+.herramientas-text {
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-primary);
+  font-size: 1.25rem;    
+  color: transparent;
+  
+  
+  margin-bottom: 2rem;    /* mb-8 */
+}
+@media (min-width: 640px) {
+  .herramientas-text {
+    font-size: 1.5rem;     /* sm:text-2xl */
+  }
+}
+
 /***************/
 .text-block-about {
   font-family: var(--font-primary);

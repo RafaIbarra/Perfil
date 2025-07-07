@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { Button,Descriptions, Row, Col,Divider,FloatButton,Typography } from 'antd';
+import { Button,FloatButton,Typography } from 'antd';
 import {UserOutlined,CodeOutlined,MailOutlined} from '@ant-design/icons';
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
@@ -146,7 +146,7 @@ const Principal = () => {
                 >
                   Contacto
                 </Button>
-              </div>
+            </div>
         </div>
         
       {
