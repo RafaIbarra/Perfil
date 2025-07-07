@@ -10,7 +10,7 @@ import Java from '../../assets/java2.png';
 import HTML from '../../assets/html.png';
 import Shell from '../../assets/Shell.png';
 import Others from '../../assets/othersv2.png'; 
-
+import './graficoscss.css'
 const LenguajesGraficos = ({ datalenguajes }) => {
   const chartRef = useRef(null);
 
@@ -110,11 +110,12 @@ const LenguajesGraficos = ({ datalenguajes }) => {
   return (
     <div
       ref={chartRef}
-      style={{
-        width: '100%',
-        height: '600px',
-        backgroundColor: 'white'
-      }}
+      className='grafico-container'
+      // style={{
+      //   width: '100%',
+      //   minHeight: '500px',
+      //   backgroundColor: 'white'
+      // }}
     />
   );
 };

@@ -1,7 +1,16 @@
 html, body {
     margin: 0;
     padding: 0;
+    /* font-family: cursive; */
+    font-family:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
     
+}
+
+:root {
+  /* --font-primary: 'Poppins', sans-serif; */
+   /* --font-primary:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', */
+   --font-primary:'cursive',
+   
 }
 
 .landing {
@@ -10,5 +19,6 @@ html, body {
     margin: 0 45px 30px 45px; 
     display: flex;
     justify-content: center;
+    
     /* background-color: aqua; */
 }

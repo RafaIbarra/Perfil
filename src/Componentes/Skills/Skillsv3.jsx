@@ -1,6 +1,6 @@
 // Skills.js
 import React from 'react';
-import { Descriptions} from 'antd';
+import { Descriptions,Divider} from 'antd';
 import { FaFileCode } from "react-icons/fa";
 import { FaDatabase } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa";
@@ -172,34 +172,38 @@ const traer_img = (valor, wordmark) => {
           
           }
         </div>
+        <Divider style={{ borderTop: '2px solid rgba(214, 211, 211, 0.62)' }} />
+        <div className='contenedor-estadisticas'> 
+            <p className="estadisticas-title">Estadisticas de repositorio</p>
+            <div className='contenedor-datos'>
 
-        <div >                
-            <Descriptions title="Datos repositorio">     
-                  <Descriptions.Item label="Perfil">
+                <div className='contedor-direcciones'>
+                    <span className='label'>Repositorio:</span>
                     <a 
                       href="https://github.com/RafaIbarra" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                    >
-                      https://github.com/RafaIbarra
+                      >
+                        https://github.com/RafaIbarra
                     </a>
-                  </Descriptions.Item>
-                  <Descriptions.Item label="Otras Estadisticas:">
-                    <a 
+                </div>
+                <div className='contedor-direcciones'>
+                  <span className='label'>Otras Estadísticas:</span>
+                  <a 
                       href="https://profile-summary-for-github.com/user/RafaIbarra" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                    >
-                      https://profile-summary-for-github.com/user/RafaIbarra
-                    </a>
-                  </Descriptions.Item>
-            </Descriptions>
-            <div style={{ marginTop:'20px',display: 'flex', flexDirection: 'row', gap: '20px' }}>
-                <div style={{height:'300px', flex: 3,justifyItems:'center'}}>
+                      >
+                        https://profile-summary-for-github.com/user/RafaIbarra
+                  </a>
+                </div>
+            </div>
+            <div className='contenedor-graficos'>
+                <div style={{ flex: 4,justifyItems:'center'}}>
                   <Descriptions style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}} title="FRAMEWORKS"/>
                   <FrameworksGraficos datacantidades={datacantidades} />
                 </div>
-                <div style={{height:'200px', flex: 7,justifyItems:'center'}}>
+                <div style={{ flex: 6,justifyItems:'center'}}>
                   
                   <Descriptions  style={{justifyItems:'center',fontStyle:'italic',textDecoration:'underline'}}  title="LENGUAJES"/>
                   <LenguajesGraficos datalenguajes={datalenguajes} />

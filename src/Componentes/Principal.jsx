@@ -27,7 +27,9 @@ const Principal = () => {
       
       if (result.resp===200){
         
-        setDatalenguajes(result.data.porcentajes)
+        const filteredData = result.data.porcentajes.filter(item => item.valor > 1.0);
+        
+        setDatalenguajes(filteredData)
         setDatacantidades(result.data.cantidades)
       }
   }
@@ -153,20 +155,13 @@ const Principal = () => {
         loading ? (<span> cargango </span>):
         (
           <>
-            <section id="about" 
-            // style={{backgroundColor:'red',minHeight:'100vh'}}
-            className="section-bg" 
-            // style={{ minHeight: '100vh', padding: '40px' }}
-            // style={{maxWidth:'100%',minHeight:'300px',backgroundColor:'red'}}
-            >
+            <section id="about" className="section-bg">
               
                 <About/>
             </section>
 
 
-            <section id="experience" className="section" 
-            style={{ minHeight: '100vh', padding: '40px' }}
-            >
+            <section id="experience" className="section" >
               
             </section>
 
@@ -177,13 +172,12 @@ const Principal = () => {
             </section>
 
 
-            <section id="skills" 
-            // className="section" 
-            className="section-skills"
-            // style={{ minHeight: '100vh', padding: '40px' }}
-            >
+            <section id="skills" className="section-skills">
              <Skills datacantidades={datacantidades} datalenguajes={datalenguajes} />
             </section>
+
+
+            
              <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 }}>
                 <FloatButton.BackTop visibilityHeight={500} />
              </FloatButton.Group>

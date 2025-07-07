@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
+import './graficoscss.css'
 const FrameworksGraficos = ({datacantidades}) => {
     const chartRef = useRef(null);
     useEffect(()=>{
@@ -74,11 +75,17 @@ const FrameworksGraficos = ({datacantidades}) => {
     return(
         <div 
         ref={chartRef} 
-        style={{
-            width: '100%',
-            height: '600px',
-            backgroundColor: 'white' // Cambiado a blanco para mejor visualización
-        }}
+        className='grafico-container'
+        // style={{
+        //     width: '100%',
+        //     minHeight: '500px',
+        //     backgroundColor: 'white',
+        //     borderRadius:'12px',
+        //     border: "1px solid #e2e8f0",
+        //     transition:'box-shadow 0.3s ease',
+            
+        // }}
+        
         />
     )
 }

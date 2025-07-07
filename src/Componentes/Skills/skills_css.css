@@ -1,10 +1,14 @@
-/* Skills.css */
-:root {
-  /* --font-primary: 'Poppins', sans-serif; */
+
+/* :root {
+  
    --font-primary:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
-}
+} */
+
+
 .skills-section {
   padding: 80px 0;
+  height: 100%;
+  
 }
 
 .skills-container {
@@ -37,6 +41,7 @@
   font-weight: 700;
   margin-bottom: 16px;
   color: #0f172a;
+  /* font-family: var(--font-primary); */
 }
 
 @media (min-width: 640px) {
@@ -50,6 +55,7 @@
   color: #64748b;
   max-width: 672px;
   margin: 0 auto;
+  /* font-family: var(--font-primary); */
 }
 
 .skills-grid {
@@ -89,7 +95,7 @@
 }
 
 /* >= 900px (3 columnas) */
-@media (min-width: 900px) and (max-width: 1300px) {
+@media (min-width: 800px) and (max-width: 1600px) {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -97,7 +103,7 @@
 }
 
 /* >= 1000px (4 columnas) */
-@media (min-width: 1301px) {
+@media (min-width: 1601px) {
   .skills-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
@@ -155,6 +161,15 @@
   background: linear-gradient(to bottom right, #f97316, #ef4444);
 }
 
+.gradient-yellow {
+  background: linear-gradient(to bottom right, #bab082, #ddd973);
+}
+.gradient-black {
+  background: linear-gradient(to bottom right, #111111, #9a987a);
+}
+.gradient-despliegue {
+  background: linear-gradient(to bottom right, #037f90, #010100);
+}
 .card-header {
   /* padding: 32px 32px 16px; */
   padding-left: 5px;
@@ -224,7 +239,7 @@
   font-weight: 600;
   color: #fcfdff;
   margin: 0;
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
 }
 
 .card-content {
@@ -276,7 +291,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: #475569;
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
 
   word-break: break-word; 
   white-space: normal; 
@@ -296,4 +311,55 @@
   .skill-badge {
     width: 8rem;
   }
+}
+
+/* .contenedor-estadisticas{
+  margin-top: 50px;
+} */
+
+.contenedor-estadisticas {
+  display: none;
+}
+
+/* Muestra el contenedor solo en pantallas >= 768px */
+@media (min-width: 800px) {
+  .contenedor-estadisticas {
+    /* display: block;
+    margin-top: 50px;
+    text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente todos los elementos hijos */
+    margin-top: 75px;
+  }
+}
+.contenedor-graficos{
+  margin-top: 75px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.estadisticas-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #0f172a;
+  
+}
+
+.contenedor-datos{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.contedor-direcciones{
+  display:flex;
+  align-items: center;
+  gap: 8px;
+}
+.label{
+  font-weight: bold;
+  white-space: nowrap;
 }

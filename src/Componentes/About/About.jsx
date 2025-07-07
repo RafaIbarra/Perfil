@@ -48,7 +48,9 @@ function About(){
         <div className="main-container">
             <div className="flex-container">
                 <div className="flex-text">
-                    <h1 className="about-title">
+                    <h1 className="about-title"
+                    // style={{fontFamily:'cursive'}}
+                    >
                          Hola, soy{" "}
                          <span className="gradient-text">
                            Rafael Ibarra

@@ -1,7 +1,7 @@
-:root {
-  /* --font-primary: 'Poppins', sans-serif; */
+/* :root {
+  
    --font-primary:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
-}
+} */
 .portfolio-container {
   width: 100vw;
   min-height: 100vh;    
@@ -47,7 +47,7 @@
   font-weight: 700;      /* font-bold */
   margin-bottom: 1.5rem; /* mb-6 - 24px */
   line-height: 1.2;
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
 }
 /* .nav-buttons {
   display: flex;
@@ -69,8 +69,10 @@
 }
 .section-skills {
   padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: rgba(33, 109, 224, 0.3); /* gris con opacidad */
+  /* padding-bottom: 5rem; */
+  background-color: rgba(33, 109, 224, 0.3); 
+  
+  
 }
 .main-container-section {
   width: 90%;
@@ -123,7 +125,7 @@
   font-size: 1.875rem;       /* text-3xl = 30px */
   font-weight: 700;          /* font-bold */
   margin-bottom: 1rem;       /* mb-4 = 16px */
-  font-family: var(--font-primary); /* si estás usando fuente personalizada */
+  /* font-family: var(--font-primary);  */
 }
 
 @media (min-width: 640px) {
@@ -138,7 +140,7 @@
   max-width: 42rem; /* max-w-2xl → 672px */
   margin-left: auto;
   margin-right: auto;
-  font-family: var(--font-primary); /* si estás usando Poppins u otra */
+  /* font-family: var(--font-primary);  */
 }
 
 

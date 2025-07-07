@@ -1,0 +1,13 @@
+.grafico-container {
+ width: 100%;
+ min-height: 500px;
+ background-color: rgb(248, 246, 246);
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+.grafico-container:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}

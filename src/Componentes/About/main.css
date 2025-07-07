@@ -1,7 +1,7 @@
-:root {
-  /* --font-primary: 'Poppins', sans-serif; */
+/* :root {
+  
    --font-primary:'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
-}
+} */
 
 .main-container {
   max-width:  100%;
@@ -79,7 +79,7 @@
   font-weight: 700;      /* font-bold */
   margin-bottom: 1.5rem; /* mb-6 - 24px */
   line-height: 1.2;
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
 }
 
 /* Estilos para el span con gradiente */
@@ -124,7 +124,7 @@
 }
 /***************************/
 .subtitle {
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
   font-size: 1.25rem;     /* text-xl */
   color: var(--muted-foreground, #6b7280); /* fallback si no hay var */
   margin-bottom: 2rem;    /* mb-8 */
@@ -140,7 +140,7 @@
   background: linear-gradient(90deg, #8a2be2, #da70d6);
   -webkit-background-clip: text;
   background-clip: text;
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
   font-size: 1.25rem;    
   color: transparent;
   
@@ -155,7 +155,7 @@
 
 /***************/
 .text-block-about {
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
   font-size: 1.125rem; /* text-lg */
   color: var(--muted-foreground, #6b7280); /* usa variable o color de fallback */
   margin-bottom: 2rem; /* mb-8 */
@@ -184,7 +184,7 @@
 }
 /**********************************************************************/
 .primary-button {
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
   display: inline-flex;
   align-items: center;
   justify-content: center;
