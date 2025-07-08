@@ -1,0 +1,310 @@
+/* proyecto.css */
+
+.project-card {
+  width: 100%;
+  max-width: 1000px;
+  height: 450px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.project-card.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.project-header {
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  height: 5.78rem;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.project-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: #2563eb;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 4; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  padding: 8px 16px;
+  gap: 4px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fafafa;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
+}
+
+.tab-button:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.tab-button.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.tab-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+  
+
+}
+
+.description-item {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-items: center;
+  align-content: center;
+ 
+}
+
+.description-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.5px;
+  
+  
+}
+
+.description-value {
+  font-size: 13px;
+  
+  color: #6b7280;
+  line-height: 1.4;
+  word-break: break-word;
+  
+}
+
+.description-link {
+  font-size: 13px;
+  color: #2563eb;
+  text-decoration: none;
+  line-height: 1.4;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.description-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Scrollbar personalizado */
+.tab-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .project-card {
+    max-width: 100%;
+    height: auto;
+    min-height: 350px;
+  }
+  
+  .project-header {
+    padding: 12px;
+    
+  }
+  
+  .project-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .project-title {
+    font-size: 16px;
+  }
+  
+  .project-description {
+    font-size: 13px;
+  }
+  
+  .tab-buttons {
+    padding: 6px 12px;
+  }
+  
+  .tab-button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .tab-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .tab-content {
+    padding: 12px;
+  }
+  
+  .description-label {
+    font-size: 11px;
+  }
+  
+  .description-value,
+  .description-link {
+    font-size: 13px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  gap: 0.5rem; /* Tailwind's gap-2 = 8px = 0.5rem */
+  /* margin-top: 7px;
+  margin-bottom: 10px;
+  justify-content: center; */
+  
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Items individuales (equivalente al Badge) */
+.tag-item {
+  font-size: 0.75rem; /* text-xs */
+  line-height: 1rem;
+  border: 1px solid #e5e7eb; /* border border-gray-200 */
+  border-radius: 0.875rem; /* rounded-md */
+  padding: 0.25rem 0.5rem; /* px-2 py-1 */
+  
+  /* Estilos adicionales para mejor apariencia */
+  /* background-color: #f9fafb; */
+  background-color:red;
+  background-color: white;
+  font-weight: 500; /* font-medium */
+  color: #111827; /* text-gray-900 */
+}
+
+/* Modo oscuro (opcional) */
+/* @media (prefers-color-scheme: dark) {
+  .tag-item {
+    border-color: #374151; 
+    background-color:whitesmoke;
+    color: #f3f4f6; 
+  }
+} */
+/* Estados de carga */
+.loading .project-header,
+.loading .project-content {
+  opacity: 0.5;
+}

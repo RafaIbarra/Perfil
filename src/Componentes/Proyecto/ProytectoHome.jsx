@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from "react";
 import { Row, Col,Divider} from 'antd';
-import Proyecto from "./Proyecto";
+import Proyecto from "./Proyectov3";
+import './ProyectoHome.css'
+
 function ProytectoHome({dataproyectos}){
   
     return(
@@ -11,8 +13,17 @@ function ProytectoHome({dataproyectos}){
                 Una selección de mis trabajos más recientes y significativos
                 </p>
             </div>
-            
-            {(() => {
+            <div className="proyectos-grid">
+                {dataproyectos.map((item)=>{
+                    return(
+                         <Proyecto key={item.id} itemdata={item} />
+                    )
+                }
+
+                )
+                }
+            </div>
+            {/* {(() => {
                 const chunkedData = [];
                 for (let i = 0; i < dataproyectos.length; i += 2) {
                 chunkedData.push(dataproyectos.slice(i, i + 2));
@@ -33,7 +44,7 @@ function ProytectoHome({dataproyectos}){
                     {rowIndex !== chunkedData.length - 1 && <Divider />}
                 </div>
                 ));
-            })()}
+            })()} */}
 
         </div>
     )
