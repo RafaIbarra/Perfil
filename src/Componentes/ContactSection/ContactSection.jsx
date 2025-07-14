@@ -27,19 +27,19 @@ export function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "rafael.ibarra@email.com",
-      href: "mailto:rafael.ibarra@email.com",
+      value: "blasrafael1986@gmail.com",
+      href: "mailto:blasrafael1986@gmail.com",
     },
     {
       icon: Phone,
       title: "Teléfono",
-      value: "+34 123 456 789",
-      href: "tel:+34123456789",
+      value: "+595 994 203 957",
+      href: "tel:+595994203957",
     },
     {
       icon: MapPin,
       title: "Ubicación",
-      value: "Madrid, España",
+      value: "Capitá, Paraguay",
       href: "#",
     },
   ];
