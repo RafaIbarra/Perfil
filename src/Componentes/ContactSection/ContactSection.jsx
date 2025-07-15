@@ -26,7 +26,7 @@ export function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
+      title: "Email de rafa",
       value: "blasrafael1986@gmail.com",
       href: "mailto:blasrafael1986@gmail.com",
     },
