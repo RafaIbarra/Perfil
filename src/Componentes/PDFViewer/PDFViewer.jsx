@@ -1,52 +1,39 @@
 import { useState, useEffect } from 'react';
-import { Document, Page } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+import { Document, Page,pdfjs } from 'react-pdf';
+// import 'react-pdf/dist/Page/AnnotationLayer.css';
+// import 'react-pdf/dist/Page/TextLayer.css';
 
+const workerUrl = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url
+).href;
+pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
+
+console.log('PDF.js version:', pdfjs.version);  // Debería mostrar 2.12.313
+console.log('Worker path:', pdfjs);  // Debería mostrar la ruta correcta
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL('/pdfjs-worker/build/pdf.worker.mjs', window.location.origin).toString();
 function PDFViewer({ pdfName }) {
-  const [pdfUrl, setPdfUrl] = useState(null);
+  // const [pdfUrl, setPdfUrl] = useState(null);
   const [numPages, setNumPages] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [archivoseleccion,setArchivoseleccion]=useState("")
  const [pdfBlob, setPdfBlob] = useState(null); // Guardamos el Blob directamente
-  
+  const [pdfUrl, setPdfUrl] = useState("https://pradmin.rafaelibarra.xyz/CurriculumData/NO/");
   // Endpoints de tu backend FastAPI
   //const API_BASE = 'http://127.0.0.1:8000';
   const API_BASE = 'https://pradmin.rafaelibarra.xyz';
   const getViewUrl = () => `${API_BASE}/CurriculumData/NO/`; // Para visualizar (application/pdf)
   const getDownloadUrl = () => `${API_BASE}/CurriculumData/SI/`; // Para descargar (application/octet-stream)
 
-  // Carga el PDF para visualización
   useEffect(() => {
-    const loadPDF = async () => {
-      try {
-        const response = await fetch(getViewUrl(), {
-          headers: {
-            'Authorization': 'Bearer TU_TOKEN_JWT', // Autenticación
-          },
-        });
-        console.log(response.ok)
-        if (!response.ok) throw new Error("Error al cargar el PDF");
-
-        const blob = await response.blob(); // Convertimos la respuesta a Blob
-        setPdfBlob(blob)
-        console.log(blob)
-        const url = URL.createObjectURL(blob);
-        setPdfUrl(url);
-      } catch (err) {
-        setError(err.message);
-        console.error("Error al cargar el PDF:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadPDF();
-
-    return () => {
-      if (pdfUrl) URL.revokeObjectURL(pdfUrl); // Limpieza
-    };
-  }, [pdfName]);
+    // console.log('PDF.js version:', pdfjs.version);
+    // console.log('Worker version:', pdfWorker);
+    setPdfUrl(`https://pradmin.rafaelibarra.xyz/CurriculumData/NO/`);
+  }, [archivoseleccion]);
+  //setPdfUrl(`${API_BASE}/CurriculumData/NO/`)
+  // Carga el PDF para visualización
+  
 
 // useEffect(() => {
 //     const fetchPDF = async () => {
@@ -66,9 +53,9 @@ function PDFViewer({ pdfName }) {
 
 //     fetchPDF();
 //   }, [pdfName]);
-  if (isLoading) return <div>Cargando PDF...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!pdfUrl) return <div>No se pudo cargar el PDF</div>;
+  // if (isLoading) return <div>Cargando PDF...</div>;
+  // if (error) return <div>Error: {error}</div>;
+  // if (!pdfUrl) return <div>No se pudo cargar el PDF</div>;
 
   return (
     <div style={{ maxWidth: '600px', margin: '20px' }}>
