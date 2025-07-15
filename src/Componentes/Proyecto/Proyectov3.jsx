@@ -10,7 +10,7 @@ function Proyecto({itemdata}){
     const [activeTab, setActiveTab] = useState('backend')
     useEffect(() => {
         const cargadatos = async () => {
-            console.log(itemdata['detalle_tags'])
+            
             setDatatags((itemdata['detalle_tags']) || [])
             setDatabackend(itemdata['detalle_backend'][0] || {});
             setDatafronted(itemdata['detalle_frontend'][0] || {});

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
  
 import {MailOutlined,CloudDownloadOutlined } from '@ant-design/icons';
+import PDFViewer from "../PDFViewer/PDFViewer";
 import "./main.css"
 const phrases = [
   "Python",
@@ -78,6 +79,7 @@ function About(){
                        <CloudDownloadOutlined style={{ fontSize: 17 }} />
                         Descargar CV
                     </button>
+                    <PDFViewer/>
                     </div>
 
 
