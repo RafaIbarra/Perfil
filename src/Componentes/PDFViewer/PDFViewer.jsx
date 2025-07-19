@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { MdHeight } from 'react-icons/md';
 import { Document, Page,pdfjs } from 'react-pdf';
 // import 'react-pdf/dist/Page/AnnotationLayer.css';
 // import 'react-pdf/dist/Page/TextLayer.css';
@@ -69,21 +70,31 @@ function PDFViewer({ pdfName }) {
         <button>Descargar PDF</button>
       </a>
 
-      {/* Vista previa con react-pdf */}
-      <Document
-        file={pdfUrl}
-        onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-        loading={<div>Cargando páginas...</div>}
-      >
-        <Page pageNumber={1} width={600} />
-      </Document>
+      
+      <div  style={{ 
+    width: '100%', 
+    maxHeight: '100px', // Altura fija que deseas
+    // overflow: 'auto',
+    border: '1px solid #ccc',
+    marginTop: '10px'
+  }}>
+        
+        <Document
+          
+          file={pdfUrl}
+          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+          loading={<div>Cargando páginas...</div>}
+        >
+          <Page 
+          pageNumber={1} 
+          width={100} // Ancho fijo
+          height={100} // Altura fija que coincide con el contenedor
+         />
+        </Document>
+      </div>
 
-      {/* Navegación entre páginas (opcional) */}
-      {numPages && (
-        <div style={{ marginTop: '10px' }}>
-          <p>Página 1 de {numPages}</p>
-        </div>
-      )}
+      
+      
     </div>
   );
 }
