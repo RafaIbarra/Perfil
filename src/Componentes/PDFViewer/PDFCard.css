@@ -2,11 +2,12 @@
 .pdf-card {
   margin-top: 1rem;
   padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
   backdrop-filter: blur(10px);
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to right, #2563eb, #9333ea); /* blue-600 to purple-600 */
 }
 
 .pdf-card h3 {

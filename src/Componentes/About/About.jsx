@@ -72,14 +72,14 @@ function About(){
                     </p>
 
                     <div className="button-group">
-                        <button className="primary-button">
+                        {/* <button className="primary-button">
                             <MailOutlined style={{ fontSize: 15 }} />
                             Contáctame
-                        </button>
-                     <button className="primary-button">
+                        </button> */}
+                     {/* <button className="primary-button">
                        <CloudDownloadOutlined style={{ fontSize: 17 }} />
                         Descargar CV
-                    </button>
+                    </button> */}
                     <PDFCard />
                     </div>
 
