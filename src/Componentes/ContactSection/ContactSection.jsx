@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import GenerarEnvioCorreo from '../../Peticiones/apienviocorreo';
 import './Contact.css';
 
 export function Contact() {
@@ -10,11 +11,28 @@ export function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData);
-  };
+  const handleSubmit = async (e) => {
+   e.preventDefault();
+    console.log('aca')
+    const datosregistrar= {
+        nombre: formData.name,
+        correocontacto: formData.email,
+        mensaje: formData.message,
+      }
+        console.log(datosregistrar)
+        const endpoint='CorreoContacto/'
+        const result = await GenerarEnvioCorreo(endpoint,  datosregistrar);
+        
+        const respuesta=result['resp']
+        if (respuesta === 200) {
+            
+           alert('Mensaje enviado con éxito');
+        }    
+        else {
+            
+           alert('Error al enviar el mensaje');
+          }
+};
 
   const handleChange = (e) => {
     setFormData({
@@ -26,7 +44,7 @@ export function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email de rafa",
+      title: "Email",
       value: "blasrafael1986@gmail.com",
       href: "mailto:blasrafael1986@gmail.com",
     },
