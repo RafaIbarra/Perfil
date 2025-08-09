@@ -10,8 +10,7 @@ const workerUrl = new URL(
 ).href;
 pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
 
-console.log('PDF.js version:', pdfjs.version);  // Debería mostrar 2.12.313
-console.log('Worker path:', pdfjs);  // Debería mostrar la ruta correcta
+
 // pdfjs.GlobalWorkerOptions.workerSrc = new URL('/pdfjs-worker/build/pdf.worker.mjs', window.location.origin).toString();
 function PDFViewer({ pdfName }) {
   // const [pdfUrl, setPdfUrl] = useState(null);

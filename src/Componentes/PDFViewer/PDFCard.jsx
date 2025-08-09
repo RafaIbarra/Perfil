@@ -1,11 +1,11 @@
 // PDFCard.jsx
 import { useState, useEffect } from 'react';
 import { EyeOutlined, CloudDownloadOutlined } from '@ant-design/icons';
-
+import { VITE_APIBASE } from '../../../config';
 import './PDFCard.css'
 export default function PDFCard() {
-  const [pdfvista, setPdfvista] = useState("https://pradmin.rafaelibarra.xyz/CurriculumData/NO/");
-  const [pdfdescarga, setPdfdescarga] = useState("https://pradmin.rafaelibarra.xyz/CurriculumData/SI/");
+  const [pdfvista, setPdfvista] = useState(`${VITE_APIBASE}/CurriculumData/NO/`);
+  const [pdfdescarga, setPdfdescarga] = useState(`${VITE_APIBASE}/CurriculumData/SI/`);
   const [pdfName,setPdfName]=useState('Rafael_Ibarra_CV')
   const getViewUrl = () => `${pdfvista}`; // Para visualizar (application/pdf)
   const getDownloadUrl = () => `${pdfdescarga}`; 

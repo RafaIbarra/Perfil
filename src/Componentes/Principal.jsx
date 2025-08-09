@@ -1,6 +1,10 @@
 import React,{useEffect,useState} from 'react';
 import { Button,FloatButton } from 'antd';
-import {UserOutlined,CodeOutlined,MailOutlined,MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import {MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import { LiaLaptopCodeSolid } from "react-icons/lia";
+import { FaCodePullRequest,FaUserShield } from "react-icons/fa6";
+import { HiOutlineMail } from 'react-icons/hi';
+
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
 
@@ -104,7 +108,7 @@ const Principal = () => {
              <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
               <Button 
                 type="text" 
-                icon={<UserOutlined />} 
+                icon={<FaUserShield  size={18}/>} 
                 onClick={() => {
                   scrollToSection('about');
                   setMenuOpen(false);
@@ -112,19 +116,10 @@ const Principal = () => {
               >
                 Acerca de mí
               </Button>
+              
               <Button 
                 type="text" 
-                icon={<UserOutlined />} 
-                onClick={() => {
-                  scrollToSection('experience');
-                  setMenuOpen(false);
-                }}
-              >
-                Experiencia
-              </Button>
-              <Button 
-                type="text" 
-                icon={<CodeOutlined />} 
+                icon={<FaCodePullRequest size={18}/>} 
                 onClick={() => {
                   scrollToSection('works');
                   setMenuOpen(false);
@@ -134,7 +129,7 @@ const Principal = () => {
               </Button>
               <Button 
                 type="text" 
-                icon={<CodeOutlined />} 
+                icon={<LiaLaptopCodeSolid  size={24}/>} 
                 onClick={() => {
                   scrollToSection('skills');
                   setMenuOpen(false);
@@ -144,7 +139,7 @@ const Principal = () => {
               </Button>
               <Button 
                 type="text" 
-                icon={<MailOutlined />} 
+                icon={<HiOutlineMail size={24}/>} 
                 onClick={() => {
                   scrollToSection('contact');
                   setMenuOpen(false);
@@ -157,48 +152,7 @@ const Principal = () => {
             
 
 
-            {/* <div style={{ 
-                display: 'flex', 
-                gap: '8px',
-                marginLeft: 'auto' 
-              }}>
-
-                <Button 
-                  type="text" 
-                  icon={<UserOutlined />} 
-                  onClick={() => scrollToSection('about')}
-                >
-                  Acerca de mí
-                </Button>
-                <Button 
-                  type="text" 
-                  icon={<UserOutlined />} 
-                  onClick={() => scrollToSection('experience')}
-                >
-                  Experiencia
-                </Button>
-                <Button 
-                  type="text" 
-                  icon={<CodeOutlined />} 
-                  onClick={() => scrollToSection('works')}
-                >
-                  Trabajos
-                </Button>
-                <Button 
-                    type="text" 
-                    icon={<CodeOutlined />} 
-                    onClick={() => scrollToSection('skills')}
-                  >
-                    Skills
-                </Button>
-                <Button 
-                  type="text" 
-                  icon={<MailOutlined />} 
-                  onClick={() => scrollToSection('contact')}
-                >
-                  Contacto
-                </Button>
-            </div> */}
+           
 
 
       </div>
@@ -212,10 +166,6 @@ const Principal = () => {
                 <About/>
             </section>
 
-
-            <section id="experience" className="section" >
-              
-            </section>
 
             <section id="works"  className="section-muted">
 

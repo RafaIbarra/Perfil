@@ -13,13 +13,13 @@ export function Contact() {
 
   const handleSubmit = async (e) => {
    e.preventDefault();
-    console.log('aca')
+    
     const datosregistrar= {
         nombre: formData.name,
         correocontacto: formData.email,
         mensaje: formData.message,
       }
-        console.log(datosregistrar)
+        
         const endpoint='CorreoContacto/'
         const result = await GenerarEnvioCorreo(endpoint,  datosregistrar);
         
