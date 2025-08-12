@@ -10,7 +10,7 @@ function ProytectoHome({dataproyectos}){
             <div className="text-center-block">
                 <h2 className="titulo-section">Proyectos Destacados</h2>
                 <p className="text-block">
-                Una selección de mis trabajos más recientes y significativos
+                Una selección de mis proyectos personales
                 </p>
             </div>
             <div className="proyectos-grid">

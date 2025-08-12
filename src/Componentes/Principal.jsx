@@ -4,12 +4,14 @@ import {MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { FaCodePullRequest,FaUserShield } from "react-icons/fa6";
 import { HiOutlineMail } from 'react-icons/hi';
+import { FaBriefcase } from 'react-icons/fa';
 
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
 
 import Skills from './Skills/Skillsv3';
 import About from './About/About';
+import { Experiencia } from './Experiencia/Experiencia';
 import ProytectoHome from './Proyecto/ProytectoHome';
 import { Contact } from './ContactSection/ContactSection';
 const Principal = () => {
@@ -116,7 +118,18 @@ const Principal = () => {
               >
                 Acerca de mí
               </Button>
-              
+
+              <Button 
+                type="text" 
+                icon={<FaBriefcase size={18}/>} 
+                onClick={() => {
+                  scrollToSection('experiencia');
+                  setMenuOpen(false);
+                }}
+              >
+                Experiencia 
+              </Button>
+
               <Button 
                 type="text" 
                 icon={<FaCodePullRequest size={18}/>} 
@@ -165,7 +178,9 @@ const Principal = () => {
               
                 <About/>
             </section>
-
+            <section id="experiencia" className="section-blanca">
+             <Experiencia/>
+            </section>
 
             <section id="works"  className="section-muted">
 
