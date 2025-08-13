@@ -37,7 +37,7 @@
 }
 
 .skills-section-title {
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 16px;
   color: #0f172a;
@@ -46,7 +46,7 @@
 
 @media (min-width: 640px) {
   .skills-section-title {
-    font-size: 3rem;
+    font-size:   2.25rem;
   }
 }
 

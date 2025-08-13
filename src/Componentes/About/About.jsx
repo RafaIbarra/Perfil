@@ -1,7 +1,5 @@
 import React,{useState,useEffect} from "react";
  
-import {MailOutlined,CloudDownloadOutlined } from '@ant-design/icons';
-import PDFViewer from "../PDFViewer/PDFViewer";
 import PDFCard from "../PDFViewer/PDFCard";
 import "./main.css"
 const phrases = [

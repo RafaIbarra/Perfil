@@ -10,7 +10,7 @@ import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
 
 import Skills from './Skills/Skillsv3';
-import About from './About/About';
+import About from './About/About2';
 import { Experiencia } from './Experiencia/Experiencia';
 import ProytectoHome from './Proyecto/ProytectoHome';
 import { Contact } from './ContactSection/ContactSection';

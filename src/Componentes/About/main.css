@@ -233,3 +233,26 @@
 .dark .profile-image {
   border-color: #1f2937;         /* dark:border-gray-800 */
 }
+
+
+
+.skills-list ul {
+  padding-left: 20px;
+  margin: 1.5rem 0;
+}
+
+.skills-list li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  position: relative;
+   color: var(--muted-foreground, #6b7280); 
+}
+
+.skills-list li::before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}

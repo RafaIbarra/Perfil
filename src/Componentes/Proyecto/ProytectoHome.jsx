@@ -8,7 +8,7 @@ function ProytectoHome({dataproyectos}){
     return(
         <div className="main-container-section">
             <div className="text-center-block">
-                <h2 className="titulo-section">Proyectos Destacados</h2>
+                <h2 className="titulo-section">Proyectos</h2>
                 <p className="text-block">
                 Una selección de mis proyectos personales
                 </p>

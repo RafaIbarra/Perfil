@@ -1,38 +1,28 @@
 import React from 'react';
 import './experiencia.css';
 
-// Componente Card personalizado
+// Componentes reutilizables (se mantienen igual)
 const Card = ({ children, className = '' }) => (
-  <div className={`card ${className}`}>
-    {children}
-  </div>
+  <div className={`card ${className}`}>{children}</div>
 );
 
 const CardHeader = ({ children }) => (
-  <div className="card-header">
-    {children}
-  </div>
+  <div className="card-header">{children}</div>
 );
 
 const CardTitle = ({ children, className = '' }) => (
-  <h3 className={`card-title ${className}`}>
-    {children}
-  </h3>
+  <h3 className={`card-title ${className}`}>{children}</h3>
 );
 
 const CardContent = ({ children, className = '' }) => (
-  <div className={`card-content ${className}`}>
-    {children}
-  </div>
+  <div className={`card-content ${className}`}>{children}</div>
 );
 
 const Badge = ({ children, variant = 'default' }) => (
-  <span className={`badge badge-${variant}`}>
-    {children}
-  </span>
+  <span className={`badge badge-${variant}`}>{children}</span>
 );
 
-// Iconos SVG simples
+// Iconos SVG (se mantienen igual)
 const Calendar = ({ className = '' }) => (
   <svg className={`icon ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -52,20 +42,27 @@ const MapPin = ({ className = '' }) => (
 export function Experiencia() {
   const experiences = [
     {
-      title: "Senior Full-Stack Developer",
+      title: "Desarrollador Full Stack & Analista de Bases de Datos",
       company: "Cooperativa Capiatá Ltda.",
       location: "Capiatá, Dpto Central",
       period: "2014 - Presente",
-      description:
-        "Liderazgo técnico en el desarrollo de aplicaciones web y móviles para clientes enterprise. Implementación de arquitecturas escalables y mentoring de desarrolladores junior.",
-      technologies: ["React", "Node.js", "DRF", "Nginx", "Nginx"],
+      description: "Lidero el desarrollo y modernización de sistemas críticos para una cooperativa con +300 usuarios concurrentes, combinando lógica de negocio en SQL Server con tecnologías modernas.",
+      responsibilities: [
+        "Diseño y optimización de bases de datos relacionales",
+        "Migración de sistemas legacy a arquitecturas modernas (DRF + React)",
+        "Configuración de entornos de despliegue (Ubuntu + Nginx)",
+        "Integración con APIs de terceros (VISA/CABAL)"
+      ],
+      technologies: ["SQL Server", "Django REST Framework", "React", "Node.js", "Nginx", "Ubuntu", "APIs REST", "Stored Procedures"],
       achievements: [
-        "Reducción del 40% en tiempo de carga de aplicaciones",
-        "Implementación de CI/CD que mejoró la productividad del equipo en 60%",
-        "Liderazgo de equipo de 5 desarrolladores",
+        "Desarrollo del sistema de débito de ahorro(Socios) para pagos y transferencias utilizado por empresas externas como DIMO, procesando 5,000+ transacciones mensuales",
+        "Digitalización completa de documentos crediticios, eliminando la necesidad de impresión física y reduciendo costos operativos",
+        "Implementación de sistema de scoring para evaluación crediticia, mejorando el análisis de riesgo mediante patrones de pago, actividad económica y movimientos de ahorro",
+        "Migración de facturación pre-impresa a sistema auto-generado, eliminando costos de compra de formularios físicos y reimpresiones",
+        "Configuración e implementación de servidor local para intranet corporativa con notificaciones en tiempo real, manteniendo integración con BD de producción",
+        "Desarrollo de sistema integral de venta de electrodomésticos con integración a módulos de crédito (financiación) y caja (contado)"
       ],
     },
-   
   ];
 
   return (
@@ -73,9 +70,9 @@ export function Experiencia() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Experiencia Profesional</h2>
-          <p className="section-description">
-            Mi trayectoria profesional en el desarrollo de software
-          </p>
+          {/* <p className="section-description">
+            Mi trayectoria combinando sistemas legacy con tecnologías modernas
+          </p> */}
         </div>
 
         <div className="experience-grid">
@@ -104,9 +101,23 @@ export function Experiencia() {
 
               <CardContent>
                 <p className="job-description">{exp.description}</p>
+                
+                {exp.responsibilities && (
+                  <div className="responsibilities-section">
+                    <h4 className="subsection-title">Mis responsabilidades incluyen:</h4>
+                    <ul className="responsibilities-list">
+                      {exp.responsibilities.map((item, idx) => (
+                        <li key={idx} className="achievement-item">
+                          <div className="achievement-bullet"></div>
+                          <span className="achievement-text">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 <div className="technologies-section">
-                  <h4 className="subsection-title">Tecnologías utilizadas:</h4>
+                  <h4 className="subsection-title">Tecnologías clave:</h4>
                   <div className="technologies-list">
                     {exp.technologies.map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary">
@@ -117,7 +128,7 @@ export function Experiencia() {
                 </div>
 
                 <div className="achievements-section">
-                  <h4 className="subsection-title">Logros principales:</h4>
+                  <h4 className="subsection-title">Logros destacados:</h4>
                   <ul className="achievements-list">
                     {exp.achievements.map((achievement, achIndex) => (
                       <li key={achIndex} className="achievement-item">
