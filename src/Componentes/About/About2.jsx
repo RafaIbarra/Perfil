@@ -67,8 +67,8 @@ function About() {
           </span>
 
           <p className="text-block-about">
-            Como desarrollador con más de una década en el sector financiero cooperativo, me apasiona tender puentes entre sistemas heredados y tecnologías modernas. 
-            Mi enfoque va más allá del código: busco entender las necesidades reales del negocio para crear soluciones que perduren.
+            Como desarrollador con más de una década en el sector financiero cooperativo, me apasiona integrar tecnologías actuales con las plataformas existentes,
+            optimizando procesos y creando soluciones que perduren. Mi enfoque va más allá del código: busco entender las necesidades reales del negocio para aportar verdadero valor.
             </p>
 
             <p className="text-block-about" >
