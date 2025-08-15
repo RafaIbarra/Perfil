@@ -79,8 +79,8 @@ function About() {
           <div className="skills-list">
             <ul>
               <li><strong>Arquitectura de datos</strong>: Desde stored procedures hasta modelos relacionales complejos</li>
-              <li><strong>Backend robusto</strong>: APIs RESTfull que mantienen la esencia del negocio</li>
-              <li><strong>Interfaces intuitivas</strong>: Frontends que simplifican procesos complejos</li>
+              <li><strong>Backend robusto</strong>:  APIs que preservan la lógica empresarial y crecen con las necesidades</li>
+              <li><strong>Interfaces intuitivas</strong>: Interfaces que simplifican procesos complejos</li>
             </ul>
           </div>
 
