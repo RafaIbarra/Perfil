@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import GenerarEnvioCorreo from '../../Peticiones/apienviocorreo';
 import './Contact.css';
 
-export function Contact() {
+export function Contact({servidoractivo}) {
+  const [textoboton,setTextoboton]=useState('Enviar Mensaje')
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -61,6 +62,16 @@ export function Contact() {
       href: "#",
     },
   ];
+  useEffect(() => {
+    // Actualiza las URLs cuando cambia servidoractivo
+    if (servidoractivo) {
+      setTextoboton('Enviar Mensaje')
+    } else {
+      
+      setTextoboton('NO DISPONIBLE')
+    }
+    
+  }, [servidoractivo]);
 
   return (
     <section id="contacto" className="contact-section">
@@ -158,9 +169,13 @@ export function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="form-submit-btn">
+                <button 
+                  type="submit" 
+                  
+                  className={`form-submit-btn ${!servidoractivo ? 'disabled-btn' : ''}`}
+                  disabled={!servidoractivo} >
                   <Send className="submit-icon" />
-                  Enviar Mensaje
+                  {textoboton}
                 </button>
               </form>
             </div>

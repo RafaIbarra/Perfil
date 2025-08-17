@@ -9,6 +9,22 @@
   margin-right: auto;
   padding-left: 1rem;   /* 16px */
   padding-right: 1rem;  /* 16px */
+
+  
+  
+}
+.button-group {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem; */
+  /* margin-left: 35%; */
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto; /* ← Mágico: auto en laterales centra el bloque */
+  width: fit-content; /* Ajusta el ancho al contenido */
+
   
 }
 
@@ -163,13 +179,7 @@
 }
 
 /************************************************************/
-.button-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
+
 
 @media (min-width: 640px) {
   .button-group {

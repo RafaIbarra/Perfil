@@ -16,7 +16,7 @@ const phrases = [
   
 ];
 
-function About() {
+function About({servidoractivo}) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
@@ -48,27 +48,27 @@ function About() {
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, pause]);
-
+  
   return (
     <div className="main-container">
       <div className="flex-container">
         <div className="flex-text">
-          <h1 className="about-title">
-            Hola, soy{" "}
-            <span className="gradient-text">Rafael Ibarra</span>
-          </h1>
-          
-    
-          <p className="subtitle">Desarrollador Full-Stack & Especialista en Bases de Datos</p>
+            <h1 className="about-title">
+              Hola, soy{" "}
+              <span className="gradient-text">Rafael Ibarra</span>
+            </h1>
+            
+      
+            <p className="subtitle">Desarrollador Full-Stack & Especialista en Bases de Datos</p>
 
-          <span className="herramientas-text">
-            {phrases[index].substring(0, subIndex)}
-            <span className="blinking-cursor">|</span>
-          </span>
+            <span className="herramientas-text">
+              {phrases[index].substring(0, subIndex)}
+              <span className="blinking-cursor">|</span>
+            </span>
 
-          <p className="text-block-about">
-            Como desarrollador con más de una década en el sector financiero cooperativo, me apasiona integrar tecnologías actuales con las plataformas existentes,
-            optimizando procesos y creando soluciones que perduren. Mi enfoque va más allá del código: busco entender las necesidades reales del negocio para aportar verdadero valor.
+            <p className="text-block-about">
+              Como desarrollador con más de una década en el sector financiero cooperativo, me apasiona integrar tecnologías actuales con las plataformas existentes,
+              optimizando procesos y creando soluciones que perduren. Mi enfoque va más allá del código: busco entender las necesidades reales del negocio para aportar verdadero valor.
             </p>
 
             <p className="text-block-about" >
@@ -76,17 +76,15 @@ function About() {
             donde experimento con arquitecturas escalables y soluciones innovadoras.
             </p>
 
-          <div className="skills-list">
-            <ul>
-              <li><strong>Arquitectura de datos</strong>: Desde stored procedures hasta modelos relacionales complejos</li>
-              <li><strong>Backend robusto</strong>:  APIs que preservan la lógica empresarial y crecen con las necesidades</li>
-              <li><strong>Interfaces intuitivas</strong>: Interfaces que simplifican procesos complejos</li>
-            </ul>
-          </div>
+            <div className="skills-list">
+              <ul>
+                <li><strong>Arquitectura de datos</strong>: Desde stored procedures hasta modelos relacionales complejos</li>
+                <li><strong>Backend robusto</strong>:  APIs que preservan la lógica empresarial y crecen con las necesidades</li>
+                <li><strong>Interfaces intuitivas</strong>: Interfaces que simplifican procesos complejos</li>
+              </ul>
+            </div>
 
-          <div className="button-group">
-            <PDFCard />
-          </div>
+            
         </div>
 
         <div className="flex-section">
@@ -102,6 +100,10 @@ function About() {
             </div>
           </div>
         </div>
+        
+      </div>
+      <div className="button-group">
+        <PDFCard servidoractivo={servidoractivo} />
       </div>
     </div>
   );

@@ -1,0 +1,196 @@
+[
+    {
+        "id": 1,
+        "Sistema": "MyFinances",
+        "Descripcion": "Proyecto creado para el registro de gastos e ingresos personales",
+        "Logo": "https://pradmin.rafaelibarra.xyz/uploads/logos/aa49682deff54b1eb82eb96cd6c895e6.png",
+        "fecha_registro": "25/06/2025 23:31:32",
+        "detalle_backend": [
+            {
+                "id": 1,
+                "Repositorio": "https://github.com/RafaIbarra/MyFinancesBackend",
+                "Framework": "Django Rest Framework",
+                "Lenguaje": "Python",
+                "BaseDatos": "PostgreSQL",
+                "Alojamiento": "Servidor Propio",
+                "SO": "Ubuntu",
+                "Urls": "https://api.rafaelibarra.xyz/",
+                "ServidorWeb": "Nginx",
+                "proyecto_id": 1
+            }
+        ],
+        "detalle_frontend": [
+            {
+                "id": 1,
+                "Repositorio": "https://github.com/RafaIbarra/MyFinancesWeb",
+                "Framework": "React",
+                "Lenguaje": "JavaScript",
+                "Alojamiento": "Vercel",
+                "SO": "",
+                "Urls": "https://my-finances-web-git-main-rafaels-projects-2fb6f3d4.vercel.app/",
+                "ServidorWeb": "",
+                "proyecto_id": 1
+            }
+        ],
+        "detalle_movil": [
+            {
+                "id": 1,
+                "Repositorio": "https://github.com/RafaIbarra/MyFinancesMovile",
+                "Framework": "React-Native",
+                "Lenguaje": "JavaScript",
+                "VersionAndroid": "SI",
+                "VersioniOS": "NO",
+                "EnlaceDescarga": "https://drive.google.com/file/d/1jE67AhspwQUt-b0hnLoTl6p_VCluElCc/view?usp=sharing",
+                "proyecto_id": 1
+            }
+        ],
+        "detalle_tags": [
+            {
+                "id": 1,
+                "Tag": "DRF",
+                "proyecto_id": 1
+            },
+            {
+                "id": 2,
+                "Tag": "React",
+                "proyecto_id": 1
+            },
+            {
+                "id": 3,
+                "Tag": "React-Native",
+                "proyecto_id": 1
+            },
+            {
+                "id": 4,
+                "Tag": "Python",
+                "proyecto_id": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "Sistema": "MyTaxes",
+        "Descripcion": "Proyecto para registrar facturas, permitiendo cargar escaneando el codigo QR de las facturas electronicas o por medio del codigo CDC de las mismas",
+        "Logo": "https://pradmin.rafaelibarra.xyz/uploads/logos/101b45c687124c4c94f091db63e9c34b.png",
+        "fecha_registro": "29/06/2025 02:38:50",
+        "detalle_backend": [
+            {
+                "id": 2,
+                "Repositorio": "https://github.com/RafaIbarra/MyTaxesBackend",
+                "Framework": "Django Rest Framework",
+                "Lenguaje": "Python",
+                "BaseDatos": "PostgreSQL",
+                "Alojamiento": "Servidor Propio",
+                "SO": "Ubuntu",
+                "Urls": "https://tax.rafaelibarra.xyz/",
+                "ServidorWeb": "Nginx",
+                "proyecto_id": 2
+            }
+        ],
+        "detalle_frontend": [
+            {
+                "id": 2,
+                "Repositorio": "",
+                "Framework": "",
+                "Lenguaje": "",
+                "Alojamiento": "",
+                "SO": "",
+                "Urls": "",
+                "ServidorWeb": "",
+                "proyecto_id": 2
+            }
+        ],
+        "detalle_movil": [
+            {
+                "id": 2,
+                "Repositorio": "https://github.com/RafaIbarra/AppMyTaxes",
+                "Framework": "React-Native",
+                "Lenguaje": "JavaScript",
+                "VersionAndroid": "SI",
+                "VersioniOS": "NO",
+                "EnlaceDescarga": " https://drive.google.com/file/d/1DyHWmj8fbb8vID60HaX8DdK2YjfUYHjX/view?usp=sharing",
+                "proyecto_id": 2
+            }
+        ],
+        "detalle_tags": [
+            {
+                "id": 5,
+                "Tag": "DRF",
+                "proyecto_id": 2
+            },
+            {
+                "id": 6,
+                "Tag": "postgresql",
+                "proyecto_id": 2
+            },
+            {
+                "id": 7,
+                "Tag": "React-Native",
+                "proyecto_id": 2
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "Sistema": "WomenPeriod",
+        "Descripcion": "",
+        "Logo": "https://pradmin.rafaelibarra.xyz/uploads/logos/2bfc0151777141618570a19da866b50f.png",
+        "fecha_registro": "07/07/2025 22:28:12",
+        "detalle_backend": [
+            {
+                "id": 4,
+                "Repositorio": "https://github.com/RafaIbarra/WomenBackend",
+                "Framework": "Django Rest Framework ",
+                "Lenguaje": "Python",
+                "BaseDatos": "PostgreSQL",
+                "Alojamiento": "Servidor Propio",
+                "SO": "PostgreSQL",
+                "Urls": "https://wom.rafaelibarra.xyz/",
+                "ServidorWeb": "Nginx",
+                "proyecto_id": 4
+            }
+        ],
+        "detalle_frontend": [
+            {
+                "id": 4,
+                "Repositorio": "",
+                "Framework": "",
+                "Lenguaje": "",
+                "Alojamiento": "",
+                "SO": "",
+                "Urls": "",
+                "ServidorWeb": "",
+                "proyecto_id": 4
+            }
+        ],
+        "detalle_movil": [
+            {
+                "id": 4,
+                "Repositorio": "https://github.com/RafaIbarra/WomenMovil",
+                "Framework": "React-Native",
+                "Lenguaje": "JavaScript",
+                "VersionAndroid": "SI",
+                "VersioniOS": "NO",
+                "EnlaceDescarga": " https://drive.google.com/file/d/1Joj9EsEEUGaQaRsfDS2hN-idcVOIGycy/view?usp=sharing",
+                "proyecto_id": 4
+            }
+        ],
+        "detalle_tags": [
+            {
+                "id": 8,
+                "Tag": "DRF",
+                "proyecto_id": 4
+            },
+            {
+                "id": 9,
+                "Tag": "React-Native",
+                "proyecto_id": 4
+            },
+            {
+                "id": 10,
+                "Tag": "Python",
+                "proyecto_id": 4
+            }
+        ]
+    }
+]

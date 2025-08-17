@@ -142,12 +142,16 @@ const traer_img = (valor, wordmark) => {
             
               <div className={`card-gradient gradient-${category.color}`}></div>
               
-              <div className="card-header">
+              <div className="card-header-skills">
                 <div className={`icon-container bg-${category.color}`}>
                     <IconComponent className="card-icon" />
                     <h3 className="card-title">{category.title}</h3>
                 </div>
               </div>
+              
+
+
+
               <div className="card-content">
                 <div className="skills-list">
                   {category.skills.map((skill, skillIndex) => (

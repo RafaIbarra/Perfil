@@ -14,13 +14,18 @@ import About from './About/About2';
 import { Experiencia } from './Experiencia/Experiencia';
 import ProytectoHome from './Proyecto/ProytectoHome';
 import { Contact } from './ContactSection/ContactSection';
+import repositoriosData from '../data/repositoriosData.json';
+import proyectosData from '../data/proyectosData.json';
+
 const Principal = () => {
   const [loading,setLoading]=useState(false)
   const [datacantidades,setDatacantidades]=useState([])
   const [datalenguajes,setDatalenguajes]=useState([])
   const [dataproyectos,setDataproyectos]=useState([])
   const [scrolled, setScrolled] = useState(false);
-   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servidoractivo,setServidoractivo]=useState(true)
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -39,6 +44,13 @@ const Principal = () => {
         setDatalenguajes(filteredData)
         setDatacantidades(result.data.cantidades)
       }
+      else{
+        setServidoractivo(false)
+        const filteredData = repositoriosData.porcentajes.filter(item => item.valor > 1.0);
+        
+        setDatalenguajes(filteredData)
+        setDatacantidades(repositoriosData.cantidades)
+      }
   }
   const listar_datos_proyectos = async()=>{
     const endpoint='ListarProyectos/0/'
@@ -48,6 +60,9 @@ const Principal = () => {
         
         setDataproyectos(result.data)
         
+      }
+      else{
+        setDataproyectos(proyectosData)
       }
   }
   useEffect(()=>{ 
@@ -79,13 +94,10 @@ const Principal = () => {
     <div className="portfolio-container">
       
       
-      <div className={`nav-buttons ${scrolled ? 'scrolled' : ''}`}
-       
-  
-      >
+      <div className={`nav-buttons ${scrolled ? 'scrolled' : ''}`}>
         
 
-            <div style={{ marginLeft: '10px'}}>
+            <div style={{ marginLeft: '10px',paddingTop:'25px',cursor: 'pointer'}}>
              
                <span className="name-text" onClick={() => {
                   scrollToSection('about');
@@ -176,7 +188,7 @@ const Principal = () => {
           <>
             <section id="about" className="section-bg">
               
-                <About/>
+                <About servidoractivo={servidoractivo}/>
             </section>
             <section id="experiencia" className="section-blanca">
              <Experiencia/>
@@ -194,7 +206,7 @@ const Principal = () => {
             </section>
 
             <section id="contact" className="section-muted">
-             <Contact/>
+             <Contact servidoractivo={servidoractivo}/>
             </section>
             
              <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 }}>

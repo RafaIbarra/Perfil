@@ -1,0 +1,270 @@
+{
+    "detalles": [
+        {
+            "id": 1,
+            "Framework": "React Native",
+            "NombreRepositorio": "AppMyTaxes",
+            "Url": "https://github.com/RafaIbarra/AppMyTaxes",
+            "Tipo": "js",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 2,
+            "Framework": "React Native",
+            "NombreRepositorio": "MyFinancesMovile",
+            "Url": "https://github.com/RafaIbarra/MyFinancesMovile",
+            "Tipo": "js",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 3,
+            "Framework": "React Native",
+            "NombreRepositorio": "WomenMovil",
+            "Url": "https://github.com/RafaIbarra/WomenMovil",
+            "Tipo": "js",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 4,
+            "Framework": "Django",
+            "NombreRepositorio": "django-messenger",
+            "Url": "https://github.com/RafaIbarra/django-messenger",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 5,
+            "Framework": "Django",
+            "NombreRepositorio": "Mensajeria-Django",
+            "Url": "https://github.com/RafaIbarra/Mensajeria-Django",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 6,
+            "Framework": "Django",
+            "NombreRepositorio": "messenger",
+            "Url": "https://github.com/RafaIbarra/messenger",
+            "Tipo": "other",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 7,
+            "Framework": "React",
+            "NombreRepositorio": "ImageReading",
+            "Url": "https://github.com/RafaIbarra/ImageReading",
+            "Tipo": "js",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 8,
+            "Framework": "React",
+            "NombreRepositorio": "MyFinancesWeb",
+            "Url": "https://github.com/RafaIbarra/MyFinancesWeb",
+            "Tipo": "js",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 9,
+            "Framework": "React",
+            "NombreRepositorio": "Perfil",
+            "Url": "https://github.com/RafaIbarra/Perfil",
+            "Tipo": "js",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 10,
+            "Framework": "Django REST Framework",
+            "NombreRepositorio": "MyDocuments",
+            "Url": "https://github.com/RafaIbarra/MyDocuments",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 11,
+            "Framework": "Django REST Framework",
+            "NombreRepositorio": "MyFinancesBackend",
+            "Url": "https://github.com/RafaIbarra/MyFinancesBackend",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 12,
+            "Framework": "Django REST Framework",
+            "NombreRepositorio": "MyTaxesBackend",
+            "Url": "https://github.com/RafaIbarra/MyTaxesBackend",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 13,
+            "Framework": "Django REST Framework",
+            "NombreRepositorio": "WomenBackend",
+            "Url": "https://github.com/RafaIbarra/WomenBackend",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        },
+        {
+            "id": 14,
+            "Framework": "FastAPI",
+            "NombreRepositorio": "PortafolioBackend",
+            "Url": "https://github.com/RafaIbarra/PortafolioBackend",
+            "Tipo": "python",
+            "fecha_registro": "08/07/2025 02:45:47"
+        }
+    ],
+    "resumen": {
+        "React Native": {
+            "count": 3,
+            "repositories": [
+                {
+                    "name": "AppMyTaxes",
+                    "url": "https://github.com/RafaIbarra/AppMyTaxes",
+                    "type": "js"
+                },
+                {
+                    "name": "MyFinancesMovile",
+                    "url": "https://github.com/RafaIbarra/MyFinancesMovile",
+                    "type": "js"
+                },
+                {
+                    "name": "WomenMovil",
+                    "url": "https://github.com/RafaIbarra/WomenMovil",
+                    "type": "js"
+                }
+            ]
+        },
+        "Django": {
+            "count": 3,
+            "repositories": [
+                {
+                    "name": "django-messenger",
+                    "url": "https://github.com/RafaIbarra/django-messenger",
+                    "type": "python"
+                },
+                {
+                    "name": "Mensajeria-Django",
+                    "url": "https://github.com/RafaIbarra/Mensajeria-Django",
+                    "type": "python"
+                },
+                {
+                    "name": "messenger",
+                    "url": "https://github.com/RafaIbarra/messenger",
+                    "type": "other"
+                }
+            ]
+        },
+        "React": {
+            "count": 3,
+            "repositories": [
+                {
+                    "name": "ImageReading",
+                    "url": "https://github.com/RafaIbarra/ImageReading",
+                    "type": "js"
+                },
+                {
+                    "name": "MyFinancesWeb",
+                    "url": "https://github.com/RafaIbarra/MyFinancesWeb",
+                    "type": "js"
+                },
+                {
+                    "name": "Perfil",
+                    "url": "https://github.com/RafaIbarra/Perfil",
+                    "type": "js"
+                }
+            ]
+        },
+        "Django REST Framework": {
+            "count": 4,
+            "repositories": [
+                {
+                    "name": "MyDocuments",
+                    "url": "https://github.com/RafaIbarra/MyDocuments",
+                    "type": "python"
+                },
+                {
+                    "name": "MyFinancesBackend",
+                    "url": "https://github.com/RafaIbarra/MyFinancesBackend",
+                    "type": "python"
+                },
+                {
+                    "name": "MyTaxesBackend",
+                    "url": "https://github.com/RafaIbarra/MyTaxesBackend",
+                    "type": "python"
+                },
+                {
+                    "name": "WomenBackend",
+                    "url": "https://github.com/RafaIbarra/WomenBackend",
+                    "type": "python"
+                }
+            ]
+        },
+        "FastAPI": {
+            "count": 1,
+            "repositories": [
+                {
+                    "name": "PortafolioBackend",
+                    "url": "https://github.com/RafaIbarra/PortafolioBackend",
+                    "type": "python"
+                }
+            ]
+        }
+    },
+    "porcentajes": [
+        {
+            "lenguaje": "JavaScript",
+            "valor": 61.03
+        },
+        {
+            "lenguaje": "CSS",
+            "valor": 8.7
+        },
+        {
+            "lenguaje": "Python",
+            "valor": 24.3
+        },
+        {
+            "lenguaje": "HTML",
+            "valor": 3.98
+        },
+        {
+            "lenguaje": "Shell",
+            "valor": 0.03
+        },
+        {
+            "lenguaje": "Java",
+            "valor": 0.0
+        },
+        {
+            "lenguaje": "Dockerfile",
+            "valor": 0.01
+        },
+        {
+            "lenguaje": "TypeScript",
+            "valor": 1.95
+        }
+    ],
+    "actualizacion": "08/07/2025 02:45:47",
+    "cantidades": [
+        {
+            "framework": "React Native",
+            "cantidad": 3
+        },
+        {
+            "framework": "Django",
+            "cantidad": 3
+        },
+        {
+            "framework": "React",
+            "cantidad": 3
+        },
+        {
+            "framework": "Django REST Framework",
+            "cantidad": 4
+        },
+        {
+            "framework": "FastAPI",
+            "cantidad": 1
+        }
+    ]
+}
