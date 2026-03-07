@@ -8,6 +8,7 @@ import { FaDev } from "react-icons/fa";
 import { DiCodeBadge } from "react-icons/di";
 import { AiFillDatabase } from "react-icons/ai";
 import { MdOutlineScience } from "react-icons/md";
+import { FaCloudflare } from "react-icons/fa";
 import { GrDeploy } from "react-icons/gr";
 import FrameworksGraficos from '../Graficos/FrameworksGraficos';
 import LenguajesGraficos from '../Graficos/LenguajesGraficos';
@@ -74,6 +75,7 @@ function Skills({datacantidades,datalenguajes}) {
         { 'name': 'Git','logoKey': 'git','wordmark':true },
         { 'name': 'Nginx','logoKey': 'nginx','wordmark':false },
         { 'name': 'Ubuntu','logoKey': 'ubuntu','wordmark':true },
+        { 'name': 'Cloudflare','logoKey': 'cloudflare','wordmark':true },
       ],
       color: "black",
     },

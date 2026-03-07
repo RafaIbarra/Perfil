@@ -73,7 +73,7 @@ function About({servidoractivo}) {
 
             <p className="text-block-about" >
             Fuera del ámbito laboral, materializo ideas a través de proyectos full-stack que desarrollo y despliego en mi propio servidor, 
-            donde experimento con arquitecturas escalables y soluciones innovadoras.
+            donde experimento con arquitecturas escalables.
             </p>
 
             <div className="skills-list">

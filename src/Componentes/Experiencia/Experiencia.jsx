@@ -55,12 +55,14 @@ export function Experiencia() {
       ],
       technologies: ["SQL Server", "Django REST Framework", "React", "Node.js", "Nginx", "Ubuntu", "APIs REST", "Stored Procedures"],
       achievements: [
+        "Participé en el proceso de migración de bases de datos desde MySQL a SQL Server, colaborando en la adaptación de estructuras y datos",
+        "Diseño y desarrollo de un sistema de compras integrado a los procesos de tesorería para la gestión de pagos a proveedores y su integración con los procesos contables, incluyendo control de inventario de los artículos adquiridos",
         "Desarrollo del sistema de débito de ahorro(Socios) para pagos y transferencias utilizado por empresas externas como DIMO, procesando 5,000+ transacciones mensuales",
-        "Digitalización completa de documentos crediticios, eliminando la necesidad de impresión física y reduciendo costos operativos",
+        "Diseño y desarrollo de un sistema de digitalización de documentos para solicitudes de crédito, permitiendo la gestión electrónica de expedientes y reduciendo costos operativos asociados a documentación física",
         "Implementación de sistema de scoring para evaluación crediticia, mejorando el análisis de riesgo mediante patrones de pago, actividad económica y movimientos de ahorro",
         "Migración de facturación pre-impresa a sistema auto-generado, eliminando costos de compra de formularios físicos y reimpresiones",
         "Configuración e implementación de servidor local para intranet corporativa con notificaciones en tiempo real, manteniendo integración con BD de producción",
-        "Desarrollo de sistema integral de venta de electrodomésticos con integración a módulos de crédito (financiación) y caja (contado)"
+        "Diseño y desarrollo de sistema integral de venta de electrodomésticos con integración a módulos de crédito (financiación) y caja (contado)"
       ],
     },
   ];
