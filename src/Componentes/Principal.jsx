@@ -8,6 +8,7 @@ import { FaBriefcase } from 'react-icons/fa';
 
 import './principal.css'
 import Generarpeticion from '../Peticiones/apipeticiones';
+import LoadingSpinner from './Spiner';
 
 import Skills from './Skills/Skillsv3';
 import About from './About/About2';
@@ -25,6 +26,7 @@ const Principal = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servidoractivo,setServidoractivo]=useState(true)
+  
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -183,7 +185,7 @@ const Principal = () => {
       </div>
         
       {
-        loading ? (<span> cargango </span>):
+        loading ? ( <LoadingSpinner />):
         (
           <>
             <section id="about" className="section-bg">
