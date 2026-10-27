@@ -1,18 +1,15 @@
-// PDFCard.jsx
 import { useState, useEffect } from 'react';
-import { EyeOutlined, CloudDownloadOutlined } from '@ant-design/icons';
+import { Eye, Download, FileText } from 'lucide-react';
 import { VITE_APIBASE } from '../../../config';
-import pdfPreview  from '../../assets/Rafael-Ibarra-CV.pdf'
-import pdfDownload from  '../../assets/Rafael-Ibarra-CV.pdf'
-import './PDFCard.css';
+import pdfPreview from '../../assets/Rafael-Ibarra-CV.pdf';
+import pdfDownload from '../../assets/Rafael-Ibarra-CV.pdf';
 
 export default function PDFCard({ servidoractivo }) {
   const [pdfvista, setPdfvista] = useState('');
   const [pdfdescarga, setPdfdescarga] = useState('');
-  const [pdfName, setPdfName] = useState('Rafael_Ibarra_CV');
+  const [pdfName] = useState('Rafael_Ibarra_CV');
 
   useEffect(() => {
-    // Actualiza las URLs cuando cambia servidoractivo
     if (servidoractivo) {
       setPdfvista(`${VITE_APIBASE}/CurriculumData/NO/`);
       setPdfdescarga(`${VITE_APIBASE}/CurriculumData/SI/`);
@@ -20,30 +17,31 @@ export default function PDFCard({ servidoractivo }) {
       setPdfvista(pdfPreview);
       setPdfdescarga(pdfDownload);
     }
-    
   }, [servidoractivo]);
 
   return (
-    <div className="pdf-card">
-      <h3>Mi Currículum</h3>
-      
-      <div className="pdf-buttons-container">
-        <button 
+    <div className="inline-flex flex-col sm:flex-row items-center gap-3 p-2 sm:p-2.5 rounded-2xl bg-slate-900/70 border border-slate-800/80 backdrop-blur-xl shadow-xl shadow-cyan-950/20">
+      <div className="flex items-center gap-2 px-3 py-1 text-slate-300 font-medium text-sm">
+        <FileText className="w-4 h-4 text-cyan-400" />
+        <span>Curriculum Vitae</span>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <button
           onClick={() => window.open(pdfvista, '_blank')}
-          className="pdf-button preview-button"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-200 bg-slate-800/80 hover:bg-cyan-500/10 hover:text-cyan-300 hover:border-cyan-500/40 border border-slate-700/60 transition-all duration-300 shadow-sm cursor-pointer"
         >
-          <EyeOutlined className="pdf-icon" />
+          <Eye className="w-4 h-4 text-cyan-400" />
           <span>Vista previa</span>
         </button>
 
-        <a 
-          href={pdfdescarga} 
-          download={servidoractivo ? `${pdfName}.pdf` : pdfDownload}
-          className="pdf-button download-button"
-          style={{ marginLeft: '10px' }}
+        <a
+          href={pdfdescarga}
+          download={servidoractivo ? `${pdfName}.pdf` : 'Rafael_Ibarra_CV.pdf'}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
         >
-          <CloudDownloadOutlined className="pdf-icon" />
-          <span>Descargar</span>
+          <Download className="w-4 h-4" />
+          <span>Descargar CV</span>
         </a>
       </div>
     </div>
